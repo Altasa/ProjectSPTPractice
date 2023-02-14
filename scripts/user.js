@@ -15,10 +15,10 @@ function SignUp(){
 }
 sign_up.addEventListener('click', SignUp);
 //database
-var requestURL="https://altasa.github.io/SPTP";
+var requestURL="https://altasa.github.io/SPTP/data.json";
 //try load file
 var request=new XMLHttpRequest();
-request.open('GET', requestURL+"/data.json");
+request.open('GET', requestURL);
 request.responseType="json";
 request.send();
 request.onload=function(){
