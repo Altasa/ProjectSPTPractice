@@ -21,5 +21,5 @@ request.responseType="json";
 request.send();
 request.onload=function(){
     var database=request.response;
-    alert(database);
+    alert(database['name']);
 }
