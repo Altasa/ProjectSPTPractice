@@ -13,3 +13,13 @@ function SignUp(){
     var password=passw.value;
 }
 sign_up.addEventListener('click', SignUp);
+//var requestURL="https://altasa.github.io/SPTP/data.json";
+var requestURL="../data.json";
+var request=new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType="json";
+request.send();
+request.onload=function(){
+    var database=request.response;
+    alert(database);
+}
