@@ -12,3 +12,6 @@
   2 начать разработку сайта.
 
   3 создать и настроить базу данных пользователей.
+
+IIIIIIIIIIIIIIIIIIIIIIIDDDDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAAASSSSSSSSSSSSSSSSSSSSSSS:::::::::::::::::::::
+https://codepen.io/epilande/pen/qBbVBj
