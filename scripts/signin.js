@@ -1,6 +1,4 @@
-var account1=document.querySelector(".account1");
-var account2=document.querySelector(".account2");
-var requestURL="http://f0781709.xsph.ru/intropage.php";
+var requestURL="http://f0781709.xsph.ru/log.php";
 var request=new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType="html";
@@ -10,10 +8,8 @@ request.onload=function(){
         account1.textContent="Sign In";
         account1.setAttribute("href", "./pages/signin.html");
         account2.textContent="Sign Up";
-        account2.setAttribute("href", "./pages/signup.html");
     } else if(request.response=="ACCESS"){
         account1.textContent="Account";
-        account1.setAttribute("href", "./pages/account.html")
         account2.textContent="Log out";
     }
 }
