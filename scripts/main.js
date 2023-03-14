@@ -66,7 +66,7 @@ request.onload=function(){
                 complete(null);
             };
         
-            form.sign_in.onclick=function(){
+            form.sign_up.onclick=function(){
                 let requestURL="../php/reg.php";
                 form=document.querySelector('#signupform');
                 formData=new FormData(form);
