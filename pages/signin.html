@@ -10,21 +10,21 @@
     <body>
         <div>
             <p>Sign in</p>
-            <form action="http://f0781709.xsph.ru/log.php" method="post">
+            <form id="formElem">
                 <div>
                     <label for="login">Login: </label>
-                        <input name="login" size="32">
+                        <input class="login" name="login" size="32">
                 </div>
                 <div>
                     <label for="passw">Passw: </label>
-                        <input name="passw" size="32">
+                        <input class="passw" name="passw" size="32">
                 </div>
                 <div>
-                    <input name="sign_in" type="submit" value="Sign in">
+                    <input name="sign_in" class="login_button" type="button" value="Sign in">
                 </div>
             </form>
         </div>
         <p><a href="../index.html">Back to main page</a></p>
-        <script src="../scripts/user.js"></script>
+        <script src="../scripts/signin.js"></script>
     </body>
 </html>

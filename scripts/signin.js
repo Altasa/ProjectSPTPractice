@@ -1,15 +1,18 @@
-var requestURL="http://f0781709.xsph.ru/log.php";
-var request=new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType="html";
-request.send();
-request.onload=function(){
-    if(request.response=="REJECT"){
-        account1.textContent="Sign In";
-        account1.setAttribute("href", "./pages/signin.html");
-        account2.textContent="Sign Up";
-    } else if(request.response=="ACCESS"){
-        account1.textContent="Account";
-        account2.textContent="Log out";
-    }
+var login_button=document.querySelector(".login_button");
+var requestURL="../php/log.php";
+login_button.onclick=function submit(){
+    form = document.querySelector('#formElem')
+    formData = new FormData(form);
+    formData.append("sign_in", "");
+    data = new URLSearchParams(formData);
+    fetch(requestURL,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Disposition': 'form-data'
+          },
+        body: data
+    })
+        .then(response=>response.text())
+        .then(result=>alert(result));
 }

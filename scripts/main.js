@@ -1,6 +1,6 @@
 var account1=document.querySelector(".account1");
 var account2=document.querySelector(".account2");
-var requestURL="http://f0781709.xsph.ru/intropage.php";
+var requestURL="../php/intropage.php";
 var request=new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType="html";
@@ -15,5 +15,6 @@ request.onload=function(){
         account1.textContent="Account";
         account1.setAttribute("href", "./pages/account.html")
         account2.textContent="Log out";
+        account2.setAttribute("href", "./php/logout.php")
     }
 }
