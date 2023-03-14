@@ -1,5 +1,18 @@
-var button1=document.getElementById("button1");
-var button2=document.getElementById("button2");
+window.onscroll = function() {stickyHeader()};
+
+var header = document.getElementById("main_h");
+var sticky = header.offsetTop;
+
+function stickyHeader() {
+    if (window.pageYOffset >= sticky) {
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
+}
+
+var login=document.getElementById("a-login");
+var register=document.getElementById("a-register");
 var requestURL="../php/intropage.php";
 var request=new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -8,9 +21,9 @@ request.send();
 var mode;
 request.onload=function(){
     if(request.response=="REJECT"){
-        button1.value="Sign In";
-        button2.value="Sign Up";
-        button1.onclick=function(){
+        login.value="Sign In";
+        register.value="Sign Up";
+        login.onclick=function(){
             let coverDiv=document.createElement('div');
             coverDiv.id='cover-div';
             document.body.style.overflowY='hidden';
@@ -45,7 +58,7 @@ request.onload=function(){
                     .then(result=>alert(result));
             }
         };
-        button2.onclick=function(){
+        register.onclick=function(){
             let coverDiv=document.createElement('div');
             coverDiv.id='cover-div';
             document.body.style.overflowY='hidden';
@@ -81,12 +94,12 @@ request.onload=function(){
             }
         }
     } else if(request.response=="ACCESS"){
-        button1.value="Account";
-        button2.value="Log Out";
-        button1.onclick=function(){
+        login.value="Account";
+        register.value="Log Out";
+        login.onclick=function(){
             location.href = "./pages/account.html";
         }
-        button2.onclick=function(){
+        register.onclick=function(){
             location.href = "./php/logout.php";
         }
     }

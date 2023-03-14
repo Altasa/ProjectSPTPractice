@@ -9,50 +9,120 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
     <body>
-    	<header class="container">
-   				<h1>BEST QUIZ EVER</h1>
-   				<nav>
-   					<input type="button" id="button1" value="">
-   					<input type="button" id="button2" value="">
-                    <input type="button" id="button3" value="PLAY">
-   					<a href="./pages/lead.html">Leaderboard</a>
-    				<a href="https://github.com/Altasa/SPTP">Github Repository</a>
-    			</nav>
+    	<header class="top" id="main_h">
+            <h1>BEST QUIZ EVER</h1>
+            <nav>
+                <input type="button" class="hua" id="a-login" value="">
+                <input type="button" class="hua" id="a-register" value="">
+            </nav>
     	</header>
-        <div id="prompt-signinform-container">
-            <form id="signinform">
-                <div id="prompt-message"></div>
-                <div>
-                    <label for="login">Login: </label>
-                        <input name="login">
+        <main>
+            <section>
+                <div id="prompt-signinform-container">
+                    <form id="signinform">
+                        <div id="prompt-message"></div>
+                        <div>
+                            <label for="login">Login: </label>
+                                <input name="login">
+                        </div>
+                        <div>
+                            <label for="passw">Passw: </label>
+                                <input name="passw">
+                        </div>
+                        <div>
+                            <input name="sign_in" class="log_button" type="button" value="Sign In">
+                            <input name="cancel" type="button" value="Отмена">
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label for="passw">Passw: </label>
-                        <input name="passw">
+                <div id="prompt-signupform-container">
+                    <form id="signupform">
+                        <div id="prompt-message"></div>
+                        <div>
+                            <label for="login">Login: </label>
+                                <input name="login">
+                        </div>
+                        <div>
+                            <label for="passw">Passw: </label>
+                                <input name="passw">
+                        </div>
+                        <div>
+                            <input name="sign_up" class="reg_button" type="button" value="Sign Up">
+                            <input name="cancel" type="button" value="Отмена">
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <input name="sign_in" class="log_button" type="button" value="Sign In">
-                    <input name="cancel" type="button" value="Отмена">
+            </section>
+            <section>
+                <h2 id="hero-title">You wanted a quiz? Here you are, masochist.</h2>
+                <div id="hero-grid">
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 1 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 1 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 2 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 2 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 3 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 3 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 4 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 4 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 5 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 5 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 6 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 6 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 7 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 7 Back Side</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="card">
+                        <figcaption class="card-side front">
+                            <p>Quiz 8 Front Side</p>
+                        </figcaption>
+                        <figcaption class="card-side back">
+                            <p>Quiz 8 Back Side</p>
+                        </figcaption>
+                    </figure>
                 </div>
-            </form>
-        </div>
-        <div id="prompt-signupform-container">
-            <form id="signupform">
-                <div id="prompt-message"></div>
-                <div>
-                    <label for="login">Login: </label>
-                        <input name="login">
-                </div>
-                <div>
-                    <label for="passw">Passw: </label>
-                        <input name="passw">
-                </div>
-                <div>
-                    <input name="sign_up" class="reg_button" type="button" value="Sign Up">
-                    <input name="cancel" type="button" value="Отмена">
-                </div>
-            </form>
-        </div>
+            </section>
+        </main>
         <script src="./scripts/main.js"></script>
     </body>
 </html>
