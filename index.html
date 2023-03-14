@@ -12,12 +12,47 @@
     	<header class="container">
    				<h1>BEST QUIZ EVER</h1>
    				<nav>
-   					<a class="account1" href=""></a>
-   					<a class="account2" href=""></a>
+   					<input type="button" id="button1" value="">
+   					<input type="button" id="button2" value="">
+                    <input type="button" id="button3" value="PLAY">
    					<a href="./pages/lead.html">Leaderboard</a>
     				<a href="https://github.com/Altasa/SPTP">Github Repository</a>
     			</nav>
     	</header>
+        <div id="prompt-signinform-container">
+            <form id="signinform">
+                <div id="prompt-message"></div>
+                <div>
+                    <label for="login">Login: </label>
+                        <input name="login">
+                </div>
+                <div>
+                    <label for="passw">Passw: </label>
+                        <input name="passw">
+                </div>
+                <div>
+                    <input name="sign_in" class="log_button" type="button" value="Sign in">
+                    <input name="cancel" type="button" value="Отмена">
+                </div>
+            </form>
+        </div>
+        <div id="prompt-signupform-container">
+            <form id="signupform">
+                <div id="prompt-message"></div>
+                <div>
+                    <label for="login">Login: </label>
+                        <input name="login">
+                </div>
+                <div>
+                    <label for="passw">Passw: </label>
+                        <input name="passw">
+                </div>
+                <div>
+                    <input name="sign_up" class="reg_button" type="button" value="Sign in">
+                    <input name="cancel" type="button" value="Отмена">
+                </div>
+            </form>
+        </div>
         <script src="./scripts/main.js"></script>
     </body>
 </html>

@@ -6,6 +6,9 @@
 
 body {
 	margin: 0;
+  	padding: 0;
+  	width: 100%;
+  	height: 100%;
 }
 
 .container {
@@ -31,4 +34,49 @@ nav a {
 nav a:hover {
 	background-color: yellow;
 	color: black;
+}
+
+#signinform, #signupform {
+	display: inline-block;
+	padding: 5px 5px 5px 70px;
+	width: 350px;
+	border: 1px solid black;
+	background: white;
+	vertical-align: middle;
+	align-content: center;
+}
+  
+#prompt-signinform-container, #prompt-signupform-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	display: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+  
+#prompt-signinform-container:before, #prompt-signupform-container:before {
+	display: inline-block;
+	height: 100%;
+	content: '';
+	vertical-align: middle;
+}
+  
+#cover-div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9000;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(78, 78, 78);
+	opacity: 0.3;
+}
+  
+#signinform input[name="text"] {
+	display: block;
+	margin: 5px;
+	width: 180px;
 }
