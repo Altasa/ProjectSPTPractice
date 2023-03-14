@@ -32,12 +32,8 @@ body {
 	right: 8px;
 }
 
-.top nav a:link, .top nav a:visited {
-	text-decoration: none;
-	color: #fff;
-}
-
 .hua {
+	text-decoration: none;
 	display: inline-block;
 	position: relative;
 	color: #fff;
@@ -92,14 +88,14 @@ main {
 	margin: 0;
 	perspective: 150rem;
   	position: relative;
-  	height: 350px;
+  	height: 450px;
   	max-width: 350px;
   	box-shadow: none;
   	background: none;
 }
 
 .card-side {
-	height: 350px;
+	height: 450px;
 	border-radius: 15px;
 	transition: all 0.8s ease;
 	backface-visibility: hidden;
@@ -173,4 +169,18 @@ main {
 	display: block;
 	margin: 5px;
 	width: 180px;
+}
+
+.bottom {
+	color: antiquewhite;
+	text-align: center;
+	background-color: #0a0a23;
+	border-top: 4px solid gold;
+	padding: 20px;
+}
+#links_f {
+	display: flex;
+	justify-content: space-around;
+	margin: 10px auto 0;
+	width: 50%;
 }
