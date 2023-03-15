@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
         <link href="./styles/style.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
     </head>
     <body>
     	<header class="top" id="main_h">
@@ -133,6 +134,16 @@
                 <a class="hua" href="https://github.com/Altasa/SPTP" target="_blank">Github Repository</a>
             </div>
         </footer>
-        <script src="./scripts/main.js"></script>
+        <script>    //avoid agressive hosting advertising
+            var mainscript=document.createElement('script');
+            mainscript.src="./scripts/main.js";
+            document.head.appendChild(mainscript);
+            mainscript.onerror=function() {   //reload if error
+                alert("ERROR");
+                script=document.createElement('script');
+                script.src="./scripts/main.js";
+                document.body.append(script);
+            };
+        </script>
     </body>
 </html>
