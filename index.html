@@ -13,8 +13,8 @@
     	<header class="top" id="main_h">
             <h1>BEST QUIZ EVER</h1>
             <nav>
-                <input type="button" class="hua" id="a-login" value="">
-                <input type="button" class="hua" id="a-register" value="">
+                <input type="button" class="hua" id="a-login" value="Sign In">
+                <input type="button" class="hua" id="a-register" value="Sign Up">
             </nav>
     	</header>
         <main>
@@ -47,6 +47,11 @@
                             <label for="passw">Passw: </label>
                                 <input name="passw">
                         </div>
+                        <div>
+                            <label for="email">Email: </label>
+                                <input name="email">
+                        </div>
+                        
                         <div>
                             <input name="sign_up" class="reg_button" type="button" value="Sign Up">
                             <input name="cancel" type="button" value="Отмена">
@@ -139,7 +144,6 @@
             mainscript.src="./scripts/main.js";
             document.head.appendChild(mainscript);
             mainscript.onerror=function() {   //reload if error
-                alert("ERROR");
                 script=document.createElement('script');
                 script.src="./scripts/main.js";
                 document.body.append(script);

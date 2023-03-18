@@ -13,7 +13,7 @@ function stickyHeader() {
 
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
-var requestURL="../php/intropage.php";
+var requestURL="./php/intropage.php";
 var request=new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType="html";
@@ -45,7 +45,7 @@ request.onload=function(){
             };
         
             form.sign_in.onclick=function(){
-                let requestURL="../php/log.php";
+                let requestURL="./php/log.php";
                 form=document.querySelector('#signinform');
                 formData=new FormData(form);
                 formData.append("sign_in", "");
@@ -80,7 +80,7 @@ request.onload=function(){
             };
         
             form.sign_up.onclick=function(){
-                let requestURL="../php/reg.php";
+                let requestURL="./php/reg.php";
                 form=document.querySelector('#signupform');
                 formData=new FormData(form);
                 formData.append("sign_up", "");
