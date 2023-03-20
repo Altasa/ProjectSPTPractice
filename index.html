@@ -18,10 +18,10 @@
             </nav>
     	</header>
         <main>
-            <section>
+            <section id="forms">
                 <div id="prompt-signinform-container">
                     <form id="signinform">
-                        <div id="prompt-message"></div>
+                        <div id="signin-prompt-message"></div>
                         <div>
                             <label for="login">Login: </label>
                                 <input name="login">
@@ -38,7 +38,7 @@
                 </div>
                 <div id="prompt-signupform-container">
                     <form id="signupform">
-                        <div id="prompt-message"></div>
+                        <div id="signup-prompt-message"></div>
                         <div>
                             <label for="login">Login: </label>
                                 <input name="login">
@@ -59,7 +59,16 @@
                     </form>
                 </div>
             </section>
-            <section>
+            <section id="message">
+                <p id="message-to-user"></p>
+            </section>
+            <section id="account">
+                <h2>Account page</h2>
+                <p>User: </p><p id="username"></p>
+                <p>email: </p><p id="useremail"></p>
+                <p>score: </p><p id="userscore"></p>
+            </section>
+            <section id="hero">
                 <h2 id="hero-title">You wanted a quiz? Here you are, masochist.</h2>
                 <div id="hero-grid">
                     <figure class="card">
@@ -139,7 +148,7 @@
                 <a class="hua" href="https://github.com/Altasa/SPTP" target="_blank">Github Repository</a>
             </div>
         </footer>
-        <script>    //avoid agressive hosting advertising
+        <script>    //avoid agressive side advertising
             var mainscript=document.createElement('script');
             mainscript.src="./scripts/main.js";
             document.head.appendChild(mainscript);

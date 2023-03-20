@@ -126,6 +126,15 @@ main {
 	transform: rotateY(0deg);
 }
 
+#account {
+	display: none;
+	border: 3px solid darkred;
+	background: #FFCC70;
+	margin: 40px;
+	padding: 5px 5px 5px 70px;
+	height: 450px;
+}
+
 #signinform, #signupform {
 	display: inline-block;
 	padding: 5px 5px 5px 70px;
