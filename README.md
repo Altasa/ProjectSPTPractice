@@ -21,6 +21,8 @@ https://codepen.io/epilande/pen/qBbVBj
 
 Референсы:
 
+https://example-io-game.victorzhou.com/
+
 [https://notdotteam.github.io/trust/](https://notdotteam.github.io/trust/)
 
 [https://agario-game.ru/](https://agario-game.ru/)

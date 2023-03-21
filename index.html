@@ -13,26 +13,26 @@
     	<header class="top" id="main_h">
             <h1>BEST QUIZ EVER</h1>
             <nav>
-                <input type="button" class="hua" id="a-login" value="Sign In">
-                <input type="button" class="hua" id="a-register" value="Sign Up">
+                <input type="button" class="huab" id="a-login" value="Sign In">
+                <input type="button" class="huab" id="a-register" value="Sign Up">
             </nav>
     	</header>
         <main>
             <section id="forms">
                 <div id="prompt-signinform-container">
                     <form id="signinform">
-                        <div id="signin-prompt-message"></div>
-                        <div>
-                            <label for="login">Login: </label>
-                                <input name="login">
+                        <h2 id="signin-prompt-message"></h2>
+                        <div class ="inputBox">
+                            <input type="text" name="login" required>
+                            <i>Username</i>
                         </div>
-                        <div>
-                            <label for="passw">Passw: </label>
-                                <input name="passw">
+                        <div class="inputBox">
+                            <input type="password" name="passw" required>
+                            <i>Password</i>
                         </div>
                         <div>
                             <input name="sign_in" class="log_button" type="button" value="Sign In">
-                            <input name="cancel" type="button" value="Отмена">
+                            <input name="cancel" type="button" value="Cancel">
                         </div>
                     </form>
                 </div>

@@ -55,6 +55,17 @@ body {
 	transform: scaleX(1);
 }
 
+.huab {
+	border: none;
+	background-color: #0a0a23;
+	color: antiquewhite;
+	cursor: pointer;
+}
+
+.huab:hover {
+	opacity: 0.8;
+}
+
 .fixed {
 	position: fixed;
 	top: 0;
@@ -135,25 +146,36 @@ main {
 	height: 450px;
 }
 
+#forms {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 #signinform, #signupform {
-	display: inline-block;
-	padding: 5px 5px 5px 70px;
-	width: 350px;
-	border: 1px solid black;
-	background: white;
-	vertical-align: middle;
-	align-content: center;
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
 }
   
 #prompt-signinform-container, #prompt-signupform-container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 9999;
+	position: absolute;
+	width: 400px;
+	background: #222;
+	z-index: 9900;
 	display: none;
-	width: 100%;
-	height: 100%;
-	text-align: center;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	border-radius: 4px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
   
 #prompt-signinform-container:before, #prompt-signupform-container:before {

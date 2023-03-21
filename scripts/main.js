@@ -11,6 +11,8 @@ function stickyHeader() {
     }
 }
 
+
+
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
 var requestURL="./php/intropage.php";
@@ -32,7 +34,7 @@ request.onload=function(){
             let container=document.getElementById('prompt-signinform-container');
             let message=document.getElementById('signin-prompt-message');
             message.innerHTML="Sign In";
-            container.style.display='block';
+            container.style.display='flex';
         
             form.cancel.onclick=function(){
                 document.getElementById('cover-div').remove();
@@ -58,8 +60,14 @@ request.onload=function(){
                 let logtimerId = setInterval(() => {
                     if(login_status==="EMPTY"){
                         message.innerText="Sign In\nAll fields are required!";
-                    }else if(login_status==="INVLP"){
-                        message.innerText="Sign In\nInvalid Username or Password!";
+                    }else if(login_status==="INVLEN"){
+                        message.innerText="Sign In\nMax 32 symbols in fields!";
+                    }else if(login_status==="INVLOG"){
+                        message.innerText="Sign In\nInvalid Username!";
+                    }else if(login_status==="INVPAS"){
+                        message.innerText="Sign In\nInvalid Password!";
+                    }else if(login_status==="UNKER"){
+                        message.innerText="Sign In\nUnknown Server Error\nPlease contact administration.";
                     }else if((login_status==="ACLOG")||(login_status=="ALLOG")){
                         location.reload();
                     }
@@ -87,7 +95,7 @@ request.onload=function(){
             let container=document.getElementById('prompt-signupform-container');
             let message=document.getElementById('signup-prompt-message');
             message.innerHTML="Sign Up";
-            container.style.display='block';
+            container.style.display='flex';
         
             form.cancel.onclick=function(){
                 document.getElementById('cover-div').remove();
