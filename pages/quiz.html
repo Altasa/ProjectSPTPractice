@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz Project</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="format-detection" content = "telephone=no">
+        <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../styles/style_game.css">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
+    </head>
+    <body>
+        <div class="quiz-box" id="quiz">
+            <div class="quiz-header">
+                <h1 id="quiz-name">Quiz name</h1>
+                <h2 id="question">Question text</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="answer" id="a" class="answer">
+                        <label for="a" id="a_text">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="b" class="answer">
+                        <label for="b" id="b_text">Question</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="c" class="answer">
+                        <label for="c" id="c_text">Question</label>
+                    </li>
+                </ul>
+            </div>
+            <button id="submit">Next</button>
+        </div>
+        <script>    //avoid agressive side advertising
+            var mainscript=document.createElement('script');
+            mainscript.src="../scripts/script_quiz.js";
+            document.head.appendChild(mainscript);
+            mainscript.onerror=function() {   //reload if error
+                script=document.createElement('script');
+                script.src="../scripts/script_quiz.js";
+                document.body.append(script);
+            };
+        </script>
+    </body>  
+</html>
