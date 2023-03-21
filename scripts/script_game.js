@@ -1,22 +1,15 @@
-const usersAnswers = []
-
-//ниже запрос на сервер
-const req_for_questions = new XMLHttpRequest();
- 
-req_for_questions.open("GET", "/main"); //вместо main другое название, связывающее запрос на сервер с самим сервером
-req_for_questions.setRequestHeader("Content-Type", "application/json"); //тип данных для передачи JSON
- 
+//запрос на сервер
+var QUESTIONS;
+var req_for_questions = new XMLHttpRequest();
+let quiz_id=window.location.href.split("?")[1].split("=")[1];
+let requestURL="../php/quiz/q"+quiz_id+".php";
+req_for_questions.open("GET", requestURL);
+req_for_questions.responseType = 'json';
 req_for_questions.send();
-
-req_for_questions.onload = () => {
-    if (req_for_questions.status == 200) { 
-        const QUESTIONS = JSON.parse(req_for_questions.responseText)
-        
-    } else {
-        console.log("Server response: ", req_for_questions.statusText);
-    }
-};
-
+req_for_questions.onload=function(){
+    QUESTIONS=req_for_questions.response;
+    loadQuiz(); //запуск квиза
+}
 
 const quiz = document.getElementById('quiz');
 const answerElements = document.querySelectorAll('.answer');
@@ -26,15 +19,13 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const submit = document.getElementById('submit');
 
-let currentQuiz = 0;
-
-
-loadQuiz(); //запуск квиза
+var usersAnswers = []
+var currentQuiz = 0;
 
 function loadQuiz(){ //загрузка квиза и его обновление
-    deselectAnswers();
+    answerElements.forEach(answerEl => answerEl.checked = false);//обновление статуса ответа
 
-    const currentQuizData = QUESTIONS[currentQuiz];
+    let currentQuizData = QUESTIONS["questions"][currentQuiz];
 
     questionElement.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
@@ -42,37 +33,33 @@ function loadQuiz(){ //загрузка квиза и его обновлени�
     c_text.innerText = currentQuizData.c;
 }
 
-function deselectAnswers(){ //обновление статуса ответа
-    answerElements.forEach(answerEl => answerEl.checked = false)
-}
-
 function getSelected(){ //учет ответов пользователя
     let answer;
-
     answerElements.forEach(answerEl => {
         if(answerEl.checked){
             answer = answerEl.id;
         }
     });
-
     return answer;
 }
 
 submit.addEventListener('click', () => { //добавление ответов в массив
-    const answer = getSelected();
-
-    usersAnswers.push(answer);
-
+    let answer = getSelected();
     if(answer){
-
-        if(currentQuiz < QUESTIONS.length){
+        usersAnswers.push(answer);
+        currentQuiz++;
+        if(currentQuiz < QUESTIONS["questions"].length){
+            if(currentQuiz==(QUESTIONS["questions"].length-1)){
+                submit.textContent="Submit";
+            }
             loadQuiz();
+        }else{
+            alert("TO SERVER");
         }
-        
     }
 });
 
-
+/*
 //отпрака массива ответов и получение результата пользователя
 const req_for_res = new XMLHttpRequest();
  
@@ -98,3 +85,4 @@ function users_res(res){ //функция вывода результата
 }
 
 users_res(result);
+*/

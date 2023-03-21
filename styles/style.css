@@ -153,6 +153,7 @@ main {
 
 #forms {
 	position: absolute;
+	top: 3%;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -215,6 +216,7 @@ main {
 	border-top: 4px solid gold;
 	padding: 20px;
 }
+
 #links_f {
 	display: flex;
 	justify-content: space-around;

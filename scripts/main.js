@@ -174,7 +174,10 @@ request.onload=function(){
     }
 }
 
+function go_quiz(value){
+    location.href="./pages/game.html?id="+value;
+}
 let quiz1=document.getElementById('quiz1');
 quiz1.onclick=function(){
-    
+    go_quiz(1);
 }
