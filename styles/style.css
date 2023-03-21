@@ -56,14 +56,17 @@ body {
 }
 
 .huab {
-	border: none;
-	background-color: #0a0a23;
-	color: antiquewhite;
+	margin-right: 5px;
+	border-radius: 5%;
+	background-color: rgb(80, 142, 200);
+	color: rgb(0, 0, 0);
+	font-size: 150%;
 	cursor: pointer;
 }
 
 .huab:hover {
 	opacity: 0.8;
+	background-image: linear-gradient(43deg, #ff0000 0%,#ffff00 46%, #ffa600 100%);
 }
 
 .fixed {
@@ -140,6 +143,7 @@ main {
 #account {
 	display: none;
 	border: 3px solid darkred;
+	border-radius: 10px;
 	background: #FFCC70;
 	margin: 40px;
 	padding: 5px 5px 5px 70px;
@@ -176,6 +180,7 @@ main {
 	padding: 40px;
 	border-radius: 4px;
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	color: rgb(240, 240, 240);
 }
   
 #prompt-signinform-container:before, #prompt-signupform-container:before {
