@@ -145,9 +145,10 @@ main {
 	border: 3px solid darkred;
 	border-radius: 10px;
 	background: #FFCC70;
-	margin: 40px;
+	margin: 5%;
 	padding: 5px 5px 5px 70px;
 	height: 450px;
+	width: 90%;
 }
 
 #forms {

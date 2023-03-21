@@ -11,17 +11,15 @@ function stickyHeader() {
     }
 }
 
-
-
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
 var requestURL="./php/intropage.php";
 var request=new XMLHttpRequest();
 request.open('GET', requestURL);
-request.responseType="html";
+request.responseType="json";
 request.send();
 request.onload=function(){
-    if(request.response=="REJECT"){
+    if(request.response==null){
         login.value="Sign In";
         register.value="Sign Up";
         login.onclick=function(){
@@ -145,7 +143,7 @@ request.onload=function(){
                 }, 3000);
             }
         }
-    } else if(request.response=="ACCESS"){
+    } else {
         login.value="Account";
         register.value="Log Out";
         let playpage=true;
@@ -167,5 +165,16 @@ request.onload=function(){
         register.onclick=function(){
             location.href = "./php/logout.php";
         }
+        let username=document.getElementById('username');
+        let useremail=document.getElementById('useremail');
+        let userscore=document.getElementById('userscore');
+        username.textContent=request.response.login;
+        useremail.textContent=request.response.email;
+        userscore.textContent=request.response.score;
     }
+}
+
+let quiz1=document.getElementById('quiz1');
+quiz1.onclick=function(){
+    
 }
