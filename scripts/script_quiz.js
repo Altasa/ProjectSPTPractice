@@ -1,15 +1,6 @@
-//запрос на сервер
 var QUESTIONS;
-var req_for_questions = new XMLHttpRequest();
-let quiz_id=window.location.href.split("?")[1].split("=")[1];
-let requestURL="../php/quiz/q"+quiz_id+".php";
-req_for_questions.open("GET", requestURL);
-req_for_questions.responseType = 'json';
-req_for_questions.send();
-req_for_questions.onload=function(){
-    QUESTIONS=req_for_questions.response;
-    loadQuiz(); //запуск квиза
-}
+var usersAnswers = []
+var currentQuiz = 0;
 
 const quiz = document.getElementById('quiz');
 const answerElements = document.querySelectorAll('.answer');
@@ -19,8 +10,17 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const submit = document.getElementById('submit');
 
-var usersAnswers = []
-var currentQuiz = 0;
+//запрос на сервер
+let quiz_id=window.location.href.split("?")[1].split("=")[1];
+let requestURL="../php/quiz/q.php";
+fetch(requestURL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    body: JSON.stringify({R:"Q", quiz_id})
+})
+    .then(response=>QUESTIONS=response.json())
+    .then(result=>QUESTIONS=result)
+    .then(loadQuiz);
 
 function loadQuiz(){ //загрузка квиза и его обновление
     answerElements.forEach(answerEl => answerEl.checked = false);//обновление статуса ответа
@@ -54,35 +54,40 @@ submit.addEventListener('click', () => { //добавление ответов �
             }
             loadQuiz();
         }else{
-            alert("TO SERVER");
+            send_submit();
         }
     }
 });
 
-/*
-//отпрака массива ответов и получение результата пользователя
-const req_for_res = new XMLHttpRequest();
- 
-req_for_res.open("POST", "/main"); //вместо main другое название, связывающее запрос на сервер с самим сервером
-req_for_res.setRequestHeader("Content-Type", "application/json"); //тип данных для передачи JSON
-
-const ANSWERS = JSON.stringify(usersAnswers);
- 
-req_for_res.send(ANSWERS);
-
-req_for_res.onload = () => {
-    if (req_for_res.status == 200) { 
-        const result = JSON.parse(req_for_res.responseText)
-        
-    } else {
-        console.log("Server response: ", req_for_res.statusText);
+function send_submit(){
+    let ans_data={
+        R:"A",
+        quiz_id,
+        usersAnswers
     }
-};
+    fetch(requestURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        body: JSON.stringify(ans_data)
+    })
+        .then(response=>response.json())
+        .then(result=>users_res(result));
 
-function users_res(res){ //функция вывода результата
-    quiz.innerHTML = `<h2>You answered coreectly at ${res}/${QUESTIONS.length} questions</h2>
-            <button onclick="location.reload()">Reload</button>`;
+    function users_res(result){ //функция вывода результата
+        if(result["U"]=="OK"){
+            quiz.innerHTML = `
+            <h2>You answered coreectly at ${result["A"]}/${QUESTIONS["questions"].length} questions</h2>
+            <p>Your points added to score!</p>
+            <button onclick="location.reload()">Reload</button>
+            <button onclick="location.href='../index.html'">Return to main page</button>
+            `;
+        }else{
+            quiz.innerHTML = `
+            <h2>You answered coreectly at ${result["A"]}/${QUESTIONS["questions"].length} questions</h2>
+            <p>If register you can collect this points!</p>
+            <button onclick="location.reload()">Reload</button>
+            <button onclick="location.href='../index.html'">Return to main page</button>
+            `;
+        }
+    }
 }
-
-users_res(result);
-*/

@@ -13,7 +13,7 @@ body{
     background-position: center;
     background-size: cover;
 }
-h2{
+h2, p{
     padding: 16px;
     text-align: center;
     margin: 0;
