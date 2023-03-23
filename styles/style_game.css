@@ -59,3 +59,9 @@ button:focus{
     outline: none;
     background-color: #5ec6eb;
 }
+
+@media screen and (max-height: 500px){
+    .quiz-header{
+        padding: 4px 64px 4px 64px
+    }
+}
