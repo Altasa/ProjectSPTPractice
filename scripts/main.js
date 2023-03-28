@@ -98,8 +98,6 @@ function userCheck(){
             
                 let form=document.getElementById('signupform');
                 let container=document.getElementById('prompt-signupform-container');
-                let message=document.getElementById('signup-prompt-message');
-                message.innerHTML=" ";
                 container.style.display='flex';
             
                 form.cancel.onclick=function(){
