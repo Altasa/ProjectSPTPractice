@@ -1,5 +1,8 @@
 {
     "questions": [
+        {   
+            "quiz_name": "Web Dev"
+        },
         {
             "question": "What does HTML stand for?",
             "a": "Helicopters Terminal Motorboats Lamborginis",
