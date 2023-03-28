@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&family=Saira&display=swap');
 * {
-	font-family: 'Itim', serif;
+	font-family: 'Quattrocento Sans', sans-serif;
 	box-sizing: border-box;
 	scrollbar-width: none;
 }
@@ -91,7 +91,6 @@ main {
 
 .card {
 	flex: 0 0 350px;
-	/* display: grid; */
 	margin: 0;
 	perspective: 150rem;
   	position: relative;
@@ -164,15 +163,34 @@ main {
 #forms {
 	position: absolute;
 	top: 3%;
-	width: 0%;
-	height: 80%;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-#signinform, #signupform {
+
+#prompt-signupform-container, #prompt-signinform-container {
+	position: fixed;
+	width: 423px;
+	height: 634.5px;
+	background-image: linear-gradient(to right, rgba(46, 70, 41, 0.5),rgba(70, 70, 70, 0.5),rgba(46, 70, 41, 0.5)), url('https://i.pinimg.com/564x/a2/f1/6d/a2f16df33fc51e18423ff469ef133e36.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	background-position: center;
+	font-size: x-large;
+	z-index: 9900;
+	display: none;
+	padding: 40px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	color: rgb(240, 240, 240);
+}
+
+#signupform, #signinform {
 	position: relative;
 	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -180,31 +198,75 @@ main {
 	gap: 20px;
 	text-align: center;
 }
-#prompt-signinform-container, #prompt-signupform-container {
-	position: fixed;
-	width: 400px;
-	background: #222;
-	z-index: 9900;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	padding: 40px;
-	border-radius: 10px;
-	border: 3px solid gold;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-	font-size: x-large;
-	color: rgb(240, 240, 240);
+
+.form-prompt-msg {
+	margin: 0;
+	position: absolute;
+	top: 10%;
+	left: 15%;
+	font-size: xx-large;
+	text-transform: uppercase;
+	text-decoration-line: underline;
+	text-decoration-color: rgb(0, 200, 0);
+	text-decoration-thickness: 4px;
 }
-#prompt-signinform-container:before, #prompt-signupform-container:before {
-	display: inline-block;
-	height: 100%;
-	content: '';
-	vertical-align: middle;
-}
-#signinform input[name="text"] {
+.inputBox {
 	display: block;
-	margin: 5px;
-	width: 180px;
+	text-align: start;
+}
+
+.inputBox input {
+	width: 343px;
+	padding: 10px 10px;
+	font-weight: 400;
+	outline: none;
+	background-color: rgba(80, 97, 82, 0.5);
+	border: 2px solid rgb(117, 138, 119);
+	border-radius: 30px;
+	color: #fff;
+	font-size: large;
+}
+.inputBox input[type="checkbox"] {
+	width: unset;
+	margin: 0 0.5em 0 0.5em;
+}
+
+/* .inputBox input[type="checkbox"]:checked {
+	background-color: green;
+} */
+
+.inputBox label[for="remember"] {
+	font-size: large;
+	font-weight: 600;
+}
+.inputBox input.log-button {
+	margin-top: 20px;
+	text-transform: uppercase;
+	font-weight: 800;
+	cursor: pointer;
+	background-color: rgb(41, 100, 50);
+}
+.inputBox input.log-button:hover {
+	background-color: rgb(0, 100, 15);
+}
+
+.auth-hr {
+	width: 100%;
+	position: absolute;
+	bottom: 50px;
+	border-color: rgba(255, 255, 255, 0.5);
+}
+.lost-pass {
+	position: absolute;
+	bottom: 0;
+	font-size: large;
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
+.lost-pass:hover, .lost-pass:visited {
+	color: rgba(255, 255, 255, 0.75);
+	cursor: pointer;
 }
 
 #account {
@@ -269,84 +331,4 @@ main {
 	justify-content: space-around;
 	margin: 10px auto 0;
 	width: 50%;
-}
-
-@media screen and (max-width: 500px){
-	#prompt-signinform-container, #prompt-signupform-container{
-		padding: 20px;
-	}
-	#main_h{
-		font-size: small;
-	}
-	#prompt-signinform-container, #prompt-signupform-container{
-		width: 350px;
-	}
-	#signinform, #signupform{
-		gap: 15px;
-	}
-	.form-prompt-msg{
-		margin: 10px;
-	}
-	#account{
-		height: 500px;
-		padding: 5px 5px 5px 15px;
-		font-size: large;
-	}
-	#leaderboard{
-		position: absolute;
-		top: 330px;
-		width: 70%;
-	}
-	#leaderboardtitle{
-		left: 35%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#leaderboardcontent{
-		margin-left: -30px;
-	}
-	.leadchild{
-		display: inline-block;
-		width: 50%;
-	}
-	.userinfo{
-		width: 70%;
-	}
-	#username, #useremail, #userscore{
-		width: 50%;
-		margin: 5%;
-	}
-	#usertitle, #emailtitle, #scoretitle{
-		width: 30%;
-		margin: 5%;
-	}
-	#message-close-icon{
-		width: 5%;
-		height: 5%;
-	}
-}
-@media screen and (max-height: 500px){
-	#prompt-signinform-container, #prompt-signupform-container{
-		padding: 20px;
-		padding-top: 0px;
-	}
-	#forms {
-		height: 100%;
-	}
-	#signinform, #signupform{
-		gap: 10px;
-	}
-	.form-prompt-msg{
-		margin: 10px;
-	}
-	#account{
-		height: 200px;
-	}
-	#leaderboard{
-		margin-right: 30%;
-	}
-	#message-close-icon{
-		width: 5%;
-		height: 5%;
-	}
 }

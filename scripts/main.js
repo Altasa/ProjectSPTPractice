@@ -39,8 +39,6 @@ function userCheck(){
             
                 let form=document.getElementById('signinform');
                 let container=document.getElementById('prompt-signinform-container');
-                let message=document.getElementById('signin-prompt-message');
-                message.innerHTML=" ";
                 container.style.display='flex';
             
                 form.cancel.onclick=function(){
