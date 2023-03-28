@@ -22,15 +22,12 @@ fetch(requestURL, {
     .then(result=>QUESTIONS=result)
     .then(loadQuiz);
 
+quiz_name.innerText = QUESTIONS.questions[0];
+
 function loadQuiz(){ //загрузка квиза и его обновление
     answerElements.forEach(answerEl => answerEl.checked = false);//обновление статуса ответа
 
     let currentQuizData = QUESTIONS["questions"][currentQuiz];
-    
-    if (currentQuiz === 0){
-      quiz_name.innerText = currentQuizData.quiz_name;
-      return;
-    }
     
     questionElement.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
