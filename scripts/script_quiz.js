@@ -27,7 +27,11 @@ function loadQuiz(){ //загрузка квиза и его обновлени�
 
     let currentQuizData = QUESTIONS["questions"][currentQuiz];
     
-    quiz_name.innerText = currentQuizData.quiz_name;
+    if (currentQuiz === 0){
+      quiz_name.innerText = currentQuizData.quiz_name;
+      return;
+    }
+    
     questionElement.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
     b_text.innerText = currentQuizData.b;
