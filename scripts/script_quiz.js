@@ -9,7 +9,7 @@ const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const submit = document.getElementById('submit');
-
+const quiz_name = document.getElementById('quiz-name');
 //запрос на сервер
 let quiz_id=window.location.href.split("?")[1].split("=")[1];
 let requestURL="../php/quiz/q.php";
@@ -26,7 +26,8 @@ function loadQuiz(){ //загрузка квиза и его обновлени�
     answerElements.forEach(answerEl => answerEl.checked = false);//обновление статуса ответа
 
     let currentQuizData = QUESTIONS["questions"][currentQuiz];
-
+    
+    quiz_name.innerText = currentQuizData.quiz_name;
     questionElement.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
     b_text.innerText = currentQuizData.b;
