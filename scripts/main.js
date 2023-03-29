@@ -43,12 +43,12 @@ function userCheck(){
                 let form=document.getElementById('signinform');
                 let container=document.getElementById('prompt-signinform-container');
                 container.style.display='flex';
-            
+                /*
                 form.cancel.onclick=function(){
                     remove_cover();
                     container.style.display='none';
                 };
-            
+                */
                 form.sign_in.onclick=function(){
                     let requestURL="./php/log.php";
                     form=document.querySelector('#signinform');
@@ -102,12 +102,12 @@ function userCheck(){
                 let form=document.getElementById('signupform');
                 let container=document.getElementById('prompt-signupform-container');
                 container.style.display='flex';
-            
+                /*
                 form.cancel.onclick=function(){
                     remove_cover();
                     container.style.display='none';
                 };
-            
+                */
                 form.sign_up.onclick=function(){
                     let requestURL="./php/reg.php";
                     form=document.querySelector('#signupform');

@@ -1,6 +1,6 @@
 var QUESTIONS;
 var usersAnswers = []
-var currentQuiz = 0;
+var currentQuiz = 1;
 
 const quiz = document.getElementById('quiz');
 const answerElements = document.querySelectorAll('.answer');
@@ -22,9 +22,9 @@ fetch(requestURL, {
     .then(result=>QUESTIONS=result)
     .then(loadQuiz);
 
-quiz_name.innerText = QUESTIONS.questions[0];
-
 function loadQuiz(){ //загрузка квиза и его обновление
+    quiz_name.innerText = QUESTIONS["questions"][0].quiz_name;
+
     answerElements.forEach(answerEl => answerEl.checked = false);//обновление статуса ответа
 
     let currentQuizData = QUESTIONS["questions"][currentQuiz];
@@ -78,7 +78,7 @@ function send_submit(){
     function users_res(result){ //функция вывода результата
         if(result["U"]=="OK"){
             quiz.innerHTML = `
-            <h2>You answered coreectly at ${result["A"]}/${QUESTIONS["questions"].length} questions</h2>
+            <h2>You answered correctly at ${result["A"]}/${QUESTIONS["questions"].length-1} questions</h2>
             <p>Your points added to score!</p>
             <button onclick="location.reload()">Reload</button>
             <button onclick="location.href='../index.html'">Return to main page</button>
