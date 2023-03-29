@@ -23,6 +23,9 @@ var forms=document.getElementById("forms");
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
 var requestURL="./php/intropage.php";
+var playpage=true;
+var hero=document.getElementById('hero');
+var account=document.getElementById('account');
 userCheck();
 
 function userCheck(){
@@ -155,11 +158,12 @@ function userCheck(){
                 }
             }
         } else {
-            login.value="Account";
+            if(playpage==true){
+                login.value="Account";
+            }else{
+                login.value="Play";
+            }
             register.value="Log Out";
-            let playpage=true;
-            let hero=document.getElementById('hero');
-            let account=document.getElementById('account');
             login.onclick=function(){
                 if(playpage==true){
                     login.value="Play";
