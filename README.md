@@ -18,6 +18,8 @@
 
 IDEAS:
 https://codepen.io/epilande/pen/qBbVBj
+https://codepen.io/jepooley/pen/NWYryap
+https://codepen.io/hexagoncircle/pen/XWbWKwL
 
 Референсы:
 
