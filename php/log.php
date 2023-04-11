@@ -1,4 +1,4 @@
-<?php
+<?php	//Обработка попытки входа
 	session_start();
 	if(isset($_SESSION["session_login"])) {
 	    echo "ALLOG";

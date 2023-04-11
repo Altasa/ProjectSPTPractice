@@ -1,4 +1,4 @@
-<?php
+<?php	//Обработка попытки регистрации
 	if(isset($_POST["sign_up"])) {
 	    if(!empty($_POST['login']) && !empty($_POST['passw'])) {
             $login=htmlspecialchars($_POST['login']);

@@ -9,6 +9,7 @@
         <meta name="format-detection" content = "telephone=no">
         <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../styles/style_game.css">
+        <!--Политика безопасности загружаемых скриптов: только с того же адреса-->
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
     </head>
     <body>
@@ -34,11 +35,11 @@
             <button id="submit">Next</button>
             <button onclick="location.href='../index.html'">Return to main page</button>
         </div>
-        <script>    //avoid agressive side advertising
+        <script>    //Безопасный загрузчик скрипта
             var mainscript=document.createElement('script');
             mainscript.src="../scripts/script_quiz.js";
             document.head.appendChild(mainscript);
-            mainscript.onerror=function() {   //reload if error
+            mainscript.onerror=function() {   //Перезагрузка при сбое
                 script=document.createElement('script');
                 script.src="../scripts/script_quiz.js";
                 document.body.append(script);

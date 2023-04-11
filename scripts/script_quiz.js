@@ -10,7 +10,8 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const submit = document.getElementById('submit');
 const quiz_name = document.getElementById('quiz-name');
-//запрос на сервер
+
+//запрос на сервер по адресу викторины
 let quiz_id=window.location.href.split("?")[1].split("=")[1];
 let requestURL="../php/quiz/q.php";
 fetch(requestURL, {
@@ -22,7 +23,7 @@ fetch(requestURL, {
     .then(result=>QUESTIONS=result)
     .then(loadQuiz);
 
-function loadQuiz(){ //загрузка квиза и его обновление
+function loadQuiz(){ //загрузка викторины и ее обновление
     quiz_name.innerText = QUESTIONS["questions"][0].quiz_name;
 
     answerElements.forEach(answerEl => answerEl.checked = false);//обновление статуса ответа
@@ -61,6 +62,7 @@ submit.addEventListener('click', () => { //добавление ответов �
     }
 });
 
+//Отправка ответов на сервер
 function send_submit(){
     let ans_data={
         R:"A",
@@ -85,7 +87,7 @@ function send_submit(){
             `;
         }else{
             quiz.innerHTML = `
-            <h2>You answered coreectly at ${result["A"]}/${QUESTIONS["questions"].length} questions</h2>
+            <h2>You answered coreectly at ${result["A"]}/${QUESTIONS["questions"].length-1} questions</h2>
             <p>If register you can collect this points!</p>
             <button onclick="location.reload()">Reload</button>
             <button onclick="location.href='../index.html'">Return to main page</button>

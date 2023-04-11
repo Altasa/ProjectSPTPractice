@@ -1,4 +1,4 @@
-<?php
+<?php	//Остановка сессии
 	session_start();
 	unset($_SESSION['session_login']);
 	unset($_SESSION['session_email']);

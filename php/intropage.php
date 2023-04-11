@@ -1,4 +1,4 @@
-<?php
+<?php   //Отображение статуса сессии
     session_start();
     if(!isset($_SESSION["session_login"])):
         echo "REJECT";
@@ -8,6 +8,7 @@
             'email'=>$_SESSION['session_email'],
             'score'=>$_SESSION['session_score']
         );
+        //Выборка списка лидеров
         require("./dbcon.php");
         $query=mysqli_query($con, "SELECT `login`, `score` FROM `userlist` ORDER BY `score` DESC LIMIT 5");
         $numrows=mysqli_num_rows($query);

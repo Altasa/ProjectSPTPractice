@@ -1,3 +1,4 @@
+//Параметры заголовка
 window.onscroll = function() {stickyHeader()};
 
 var header = document.getElementById("main_h");
@@ -11,14 +12,17 @@ function stickyHeader() {
     }
 }
 
+//Отображение сообщения пользователю
 var msgBox=document.getElementById("message");
 var msgToUser=document.getElementById("message-to-user");
 var msgCloseButton=document.getElementById("message-close-icon");
-msgCloseButton.onclick=function(){
+msgCloseButton.onclick=function(){msgClose()};
+function msgClose(){
     msgBox.style.display='none';
     msgBox.style.backgroundColor='lawngreen';
 }
 
+//Загрузка учетной записи и функционала страницы
 var forms=document.getElementById("forms");
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
@@ -28,27 +32,31 @@ var hero=document.getElementById('hero');
 var account=document.getElementById('account');
 userCheck();
 
+//Функция подгрузки учетной записи
 function userCheck(){
+    //Запрос статуса сессии
     let request=new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType="json";
     request.send();
     request.onload=function(){
-        if(request.response==null){
+        if(request.response==null){ //При отсутствии сессии установить функции входа и регистрации
             login.value="Sign In";
             register.value="Sign Up";
-            login.onclick=function(){
+            let message="#";    //Нужно добавить отображение специальных сообщений
+
+            login.onclick=function(){   //Форма входа в учетную запись
                 cover();
             
                 let form=document.getElementById('signinform');
                 let container=document.getElementById('prompt-signinform-container');
                 container.style.display='flex';
-                /*
+                
                 form.cancel.onclick=function(){
                     remove_cover();
                     container.style.display='none';
                 };
-                */
+                
                 form.sign_in.onclick=function(){
                     let requestURL="./php/log.php";
                     form=document.querySelector('#signinform');
@@ -62,7 +70,7 @@ function userCheck(){
                     })
                         .then(response=>response.text())
                         .then(result=>login_status=result);
-                    //Loading
+                    //Загрузка ответа сервера
                     let loading_status=false;
                     let logtimerId = setInterval(() => {
                         if(login_status==="EMPTY"){
@@ -87,7 +95,7 @@ function userCheck(){
                             clearInterval(logtimerId);
                         }
                     }, 100);
-                    //Stop loading after 3 sec
+                    //Прерывание по истечении 3 секунд
                     setTimeout(() => { 
                         if(loading_status==false){
                             clearInterval(logtimerId);
@@ -96,18 +104,19 @@ function userCheck(){
                     }, 3000);
                 }
             };
-            register.onclick=function(){
+
+            register.onclick=function(){//Форма регистрации учетной записи
                 cover();
             
                 let form=document.getElementById('signupform');
                 let container=document.getElementById('prompt-signupform-container');
                 container.style.display='flex';
-                /*
+                
                 form.cancel.onclick=function(){
                     remove_cover();
                     container.style.display='none';
                 };
-                */
+                
                 form.sign_up.onclick=function(){
                     let requestURL="./php/reg.php";
                     form=document.querySelector('#signupform');
@@ -121,7 +130,7 @@ function userCheck(){
                     })
                         .then(response=>response.text())
                         .then(result=>reger_status=result);
-                    //Loading
+                    //Загрузка ответа сервера
                     let loading_status=false;
                     let regtimerId = setInterval(() => {
                         if(reger_status==="EMPTY"){
@@ -144,7 +153,7 @@ function userCheck(){
                             clearInterval(regtimerId);
                         }
                     }, 100);
-                    //Stop loading after 3 sec
+                    //Прерывание по истечении 3 секунд
                     setTimeout(() => { 
                         if(loading_status==false){
                             clearInterval(regtimerId);
@@ -153,7 +162,8 @@ function userCheck(){
                     }, 3000);
                 }
             }
-        } else {
+
+        } else {    //При активной сессии установить блок работы с аккаунтом и функцию выхода
             if(playpage==true){
                 login.value="Account";
             }else{
@@ -172,10 +182,12 @@ function userCheck(){
                     hero.style.display='block';
                     account.style.display='none';
                 }
+                msgClose();
             }
             register.onclick=function(){
                 location.href = "./php/logout.php";
             }
+            //Установка данных аккаунта и состояния рейтинга
             let username=document.getElementById('username');
             let useremail=document.getElementById('useremail');
             let userscore=document.getElementById('userscore');
@@ -190,6 +202,7 @@ function userCheck(){
             }
         }
     }
+    //Функции отображения покрытия форм входа и регистрации
     function cover(){
         let coverDiv=document.createElement('div');
         coverDiv.id='cover-div';
@@ -204,6 +217,7 @@ function userCheck(){
     }
 }
 
+//Функционал изменений в аккаунте
 var change_login_button=document.getElementById("change_login");
 var change_email_button=document.getElementById("change_email");
 var change_passw_button=document.getElementById("change_passw");
@@ -317,10 +331,11 @@ change_passw_button.onclick=function(){
     }, 3000);
 }
 
+//Загрузка викторин
 let quiz1=document.getElementById('quiz1');
-quiz1.onclick=function(){
-    go_quiz(1);
-}
-function go_quiz(value){
-    location.href="./pages/quiz.html?id="+value;
-}
+quiz1.onclick=function(){go_quiz(1);}
+let quiz2=document.getElementById('quiz2');
+quiz2.onclick=function(){go_quiz(2);}
+let quiz3=document.getElementById('quiz3');
+quiz3.onclick=function(){go_quiz(3);}
+function go_quiz(value){location.href="./pages/quiz.html?id="+value;}

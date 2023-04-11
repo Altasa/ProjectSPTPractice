@@ -12,9 +12,11 @@
         <link rel="icon" href="./images/favicon64.ico" type="image/x-icon" sizes="64x64">
         <link href="./styles/style.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--Политика безопасности загружаемых скриптов: только с того же адреса-->
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
     </head>
     <body>
+        <!--Заголовок (шапка) страницы-->
     	<header class="top" id="main_h">
             <h1>BEST QUIZ EVER</h1>
             <nav>
@@ -23,6 +25,7 @@
             </nav>
     	</header>
         <main>
+            <!--Формы входа и регистрации учетной записи пользователя-->
             <section id="forms">
                 <div id="prompt-signinform-container">
                     <h2 class="form-prompt-msg" id="signin-prompt-header">Sign In</h2>
@@ -38,8 +41,8 @@
                         <div class="inputBox">
                             <label for="remember"><input type="checkbox" id="remember" name="keep-log-info" />Keep me Signed In</label>
                             <input name="sign_in" class="log-button" type="button" value="Sign In">
+                            <input name="cancel" type="button" value="Cancel">
                         </div>
-              
                         <hr class="auth-hr">
                         <a href="#" class="lost-pass">Forgot Password?</a>
                     </form>
@@ -61,14 +64,17 @@
                         </div>
                         <div class="inputBox">
                             <input name="sign_up" class="log-button" type="button" value="Create Account">
+                            <input name="cancel" type="button" value="Cancel">
                         </div>  
                     </form>
                 </div>
             </section>
+            <!--Сообщение пользователю-->
             <section id="message">
                     <span id="message-to-user"></span>
                     <img id="message-close-icon" src="./images/close.png">
             </section>
+            <!--Блок работы с учетной записью и просмотра рейтинга-->
             <section id="account">
                 <div id="leaderboard">
                     <h2 id="leaderboardtitle">Leaders</h2>
@@ -85,31 +91,32 @@
                 <div class="userinfo"><span id="emailtitle">Email: </span><span id="useremail"></span><input type="button" id="change_email" value="Change email"></div>
                 <div class="userinfo"><span id="scoretitle">Score: </span><span id="userscore"></span><input type="button" id="change_passw" value="Change passw"></div>
             </section>
+            <!--Таблица доступных викторин-->
             <section id="hero">
                 <h2 id="hero-title">You wanted a quiz? Here you are, masochist.</h2>
                 <div id="hero-grid">
                     <figure class="card" id="quiz1">
                         <figcaption class="card-side front">
-                            <p>Quiz 1 Front Side</p>
+                            <p>Quiz 1: What about Web develop?</p>
                         </figcaption>
                         <figcaption class="card-side back">
-                            <p>Quiz 1 Back Side</p>
+                            <p>Quiz 1: Description</p>
                         </figcaption>
                     </figure>
-                    <figure class="card">
+                    <figure class="card" id="quiz2">
                         <figcaption class="card-side front">
-                            <p>Quiz 2 Front Side</p>
+                            <p>Quiz 2: What about cats?</p>
                         </figcaption>
                         <figcaption class="card-side back">
-                            <p>Quiz 2 Back Side</p>
+                            <p>Quiz 2: Meow</p>
                         </figcaption>
                     </figure>
-                    <figure class="card">
+                    <figure class="card" id="quiz3">
                         <figcaption class="card-side front">
-                            <p>Quiz 3 Front Side</p>
+                            <p>Quiz 3: Kinomania</p>
                         </figcaption>
                         <figcaption class="card-side back">
-                            <p>Quiz 3 Back Side</p>
+                            <p>Quiz 3: Let's talk about films and actors</p>
                         </figcaption>
                     </figure>
                     <figure class="card">
@@ -155,6 +162,7 @@
                 </div>
             </section>
         </main>
+        <!--Сведения об авторах-->
         <footer class="bottom" id="main_f">
             <div id="commons">
                 <p>Created and maintained under a <a class="hua" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> on behalf of Nikita Zhdanov, Maxim Sozurukov, Mikhail Verkhov.</p>
@@ -165,11 +173,11 @@
                 <a class="hua" href="https://github.com/Altasa/SPTP" target="_blank">Github Repository</a>
             </div>
         </footer>
-        <script>    //avoid agressive side advertising
+        <script>    //Безопасный загрузчик скрипта
             var mainscript=document.createElement('script');
             mainscript.src="./scripts/main.js";
             document.head.appendChild(mainscript);
-            mainscript.onerror=function() {   //reload if error
+            mainscript.onerror=function() {   //Перезагрузка при сбое
                 script=document.createElement('script');
                 script.src="./scripts/main.js";
                 document.body.append(script);
