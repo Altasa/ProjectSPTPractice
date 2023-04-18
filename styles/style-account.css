@@ -1,0 +1,44 @@
+#account {
+	display: none;
+	border: 3px solid darkred;
+	border-radius: 10px;
+	background: #FFCC70;
+	margin: 5% 10% 5% 10%;
+	padding: 5px 5px 5px 70px;
+	height: 450px;
+	width: 80%;
+}
+
+.userinfo {
+	width: 50%;
+	margin-top: 1%;
+}
+
+#username, #useremail, #userscore, #usertitle, #emailtitle, #scoretitle {
+	display: inline-block;
+	width: 30%;
+}
+
+#leaderboard {
+	float: right;
+	margin-right: 15%;
+	position: relative;
+}
+
+#leaderboardtitle {
+	position: relative;
+	left: 60%;
+} 
+
+#lead2, #lead3, #lead4, #lead5 {
+	display: none;
+}
+
+#leaderboardcontent {
+	width: 170%;
+}
+
+.leadchild {
+	display: inline-block;
+	width: 80%;
+}

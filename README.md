@@ -14,6 +14,9 @@ IDEAS:
 https://codepen.io/epilande/pen/qBbVBj
 https://codepen.io/jepooley/pen/NWYryap
 https://codepen.io/hexagoncircle/pen/XWbWKwL
+https://codepen.io/himalayasingh/pen/OKOLEe
+https://codepen.io/3psy0n/pen/LYpajmX
+https://codepen.io/rabakilgur/pen/RYpVQz
 
 Референсы:
 
