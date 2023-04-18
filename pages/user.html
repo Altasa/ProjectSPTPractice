@@ -7,13 +7,13 @@
         <meta property="og:title" content="Best Quiz Ever">
         <meta property="og:url" content="http://http://f0781709.xsph.ru/">
         <meta property="og:image" content="./images/og_logo.png">
-        <meta property="og:description" content="Play the best quiz, collect points and compete with others!">
-        <link rel="icon" href="./images/favicon32.ico" type="image/x-icon" sizes="32x32">
-        <link rel="icon" href="./images/favicon64.ico" type="image/x-icon" sizes="64x64">
-        <link href="./styles/style-body.css" rel="stylesheet" type="text/css">
-        <link href="./styles/style-cards.css" rel="stylesheet" type="text/css">
-        <link href="./styles/style-auth.css" rel="stylesheet" type="text/css">
-        <link href="./styles/style-account.css" rel="stylesheet" type="text/css">
+        <meta property="og:description" content="Play the best quiz, collect points and competite with others!">
+        <link rel="icon" href="../images/favicon32.ico" type="image/x-icon" sizes="32x32">
+        <link rel="icon" href="../images/favicon64.ico" type="image/x-icon" sizes="64x64">
+        <link href="../styles/style-body.css" rel="stylesheet" type="text/css">
+        <link href="../styles/style-cards.css" rel="stylesheet" type="text/css">
+        <link href="../styles/style-auth.css" rel="stylesheet" type="text/css">
+        <link href="../styles/style-account.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <!--Политика безопасности загружаемых скриптов: только с того же адреса-->
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
@@ -34,33 +34,25 @@
         <main>
             <!--Сообщение пользователю-->
             <section id="message">
-                    <span id="message-to-user"></span>
-                    <img id="message-close-icon" src="./images/close.png">
+                <span id="message-to-user"></span>
+                <img id="message-close-icon" src="../images/close.png">
             </section>
-            <!--Таблица доступных викторин-->
-            <section id="hero">
-                <h2 id="hero-title">You wanted a quiz? Here you are, masochist.</h2>
-                <div class="top" style="position: relative;">
-                    <nav class="top" style="position: relative;">
-                        <ul id="hero-grid" style="display: block; position: relative;">
-                            <li class="card" id="quiz1">
-                                <figcaption class="card-side front">
-                                    <p>Quiz 1: What about Web develop?</p>
-                                </figcaption>
-                            </li>
-                            <li class="card" id="quiz2">
-                                <figcaption class="card-side front">
-                                    <p>Quiz 2: What about cats?</p>
-                                </figcaption>
-                            </li>
-                            <li class="card" id="quiz3">
-                                <figcaption class="card-side front">
-                                    <p>Quiz 3: Kinomania</p>
-                                </figcaption>
-                            </li>
-                        </ul>
-                    </nav>
+            <!--Блок работы с учетной записью и просмотра рейтинга-->
+            <section id="account">
+                <div id="leaderboard">
+                    <h2 id="leaderboardtitle">Leaders</h2>
+                    <ol id="leaderboardcontent">
+                        <li id="lead1"><span class="leadchild"></span><span></span></li>
+                        <li id="lead2"><span class="leadchild"></span><span></span></li>
+                        <li id="lead3"><span class="leadchild"></span><span></span></li>
+                        <li id="lead4"><span class="leadchild"></span><span></span></li>
+                        <li id="lead5"><span class="leadchild"></span><span></span></li>
+                    </ol>
                 </div>
+                <h2 class="userinfo">Account page</h2>
+                <div class="userinfo"><span id="usertitle">User: </span><span id="username"></span><input type="button" id="change_login" value="Change login"></div>
+                <div class="userinfo"><span id="emailtitle">Email: </span><span id="useremail"></span><input type="button" id="change_email" value="Change email"></div>
+                <div class="userinfo"><span id="scoretitle">Score: </span><span id="userscore"></span><input type="button" id="change_passw" value="Change passw"></div>
             </section>
         </main>
         <!--Сведения об авторах-->
@@ -76,11 +68,11 @@
         </footer>
         <script>    //Безопасный загрузчик скрипта
             var mainscript=document.createElement('script');
-            mainscript.src="./scripts/main.js";
+            mainscript.src="../scripts/user.js";
             document.head.appendChild(mainscript);
             mainscript.onerror=function() {   //Перезагрузка при сбое
                 script=document.createElement('script');
-                script.src="./scripts/main.js";
+                script.src="../scripts/user.js";
                 document.body.append(script);
             };
         </script>
