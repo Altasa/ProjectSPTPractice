@@ -54,3 +54,20 @@
 span, input {
 	color: black;
 }
+
+#prompt-pictureform-container {
+	display: none;
+	position: fixed;
+	width: 400px;
+	height: 200px;
+	background-image: linear-gradient(to right, rgba(46, 70, 41, 0.5),rgba(70, 70, 70, 0.5),rgba(46, 70, 41, 0.5)), url('https://i.pinimg.com/564x/a2/f1/6d/a2f16df33fc51e18423ff469ef133e36.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	background-position: center;
+	font-size: x-large;
+	z-index: 9900;
+	padding: 40px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	color: rgb(240, 240, 240);
+}

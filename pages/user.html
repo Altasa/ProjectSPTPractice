@@ -38,21 +38,36 @@
                 <img id="message-close-icon" src="../images/close.png">
             </section>
             <!--Блок работы с учетной записью и просмотра рейтинга-->
+            <section id="prompt-pictureform-container">
+                <h2 class="form-prompt-msg" id="prompt-pictureform-header">Insert new picture</h2>
+                <span>Only PNG images and less 10 KB</span>
+                <form id="pictureform" enctype="multipart/form-data">
+                    <div class ="inputBox">
+                        <input type="file" name="picture" required>
+                    </div>
+                    <div class="inputBox">
+                        <input name="sent_picture" type="button" value="Sent picture">
+                        <input name="cancel" type="button" value="Cancel">
+                    </div>
+                </form>
+            </section>
             <section id="account">
                 <div id="leaderboard">
                     <h2 id="leaderboardtitle">Leaders</h2>
                     <ol id="leaderboardcontent">
-                        <li id="lead1"><span class="leadchild"></span><span></span></li>
-                        <li id="lead2"><span class="leadchild"></span><span></span></li>
-                        <li id="lead3"><span class="leadchild"></span><span></span></li>
-                        <li id="lead4"><span class="leadchild"></span><span></span></li>
-                        <li id="lead5"><span class="leadchild"></span><span></span></li>
+                        <li id="lead1"><img src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead2"><img src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead3"><img src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead4"><img src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead5"><img src="#"><span class="leadchild"></span><span></span></li>
                     </ol>
                 </div>
                 <h2 class="userinfo">Account page</h2>
+                <div class="userinfo"><img id="userpicture" src="#"><input type="button" id="change_picture" value="Change_picture"></div>
                 <div class="userinfo"><span id="usertitle">User: </span><span id="username"></span><input type="button" id="change_login" value="Change login"></div>
                 <div class="userinfo"><span id="emailtitle">Email: </span><span id="useremail"></span><input type="button" id="change_email" value="Change email"></div>
                 <div class="userinfo"><span id="scoretitle">Score: </span><span id="userscore"></span><input type="button" id="change_passw" value="Change passw"></div>
+                <div class="userinfo"><input type="button" id="delete_account" value="Delete_account"></div>
             </section>
         </main>
         <!--Сведения об авторах-->

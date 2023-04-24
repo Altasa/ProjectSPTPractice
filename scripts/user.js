@@ -54,13 +54,22 @@ function userCheck(){
             let username=document.getElementById('username');
             let useremail=document.getElementById('useremail');
             let userscore=document.getElementById('userscore');
+            let userpicture=document.getElementById('userpicture');
             username.textContent=request.response.login;
             useremail.textContent=request.response.email;
             userscore.textContent=request.response.score;
+            userpicture.src="../images/users/"+request.response.picture+".png";
+            userpicture.onerror=function(){
+                userpicture.src="../images/miss.png";
+            };
             let leadlist=document.querySelectorAll('#leaderboardcontent')[0].childNodes;
-            for(let i=0;i<Object.keys(request.response).length-3;i++){
-                leadlist[2*i+1].childNodes[0].textContent=request.response[i].login;
-                leadlist[2*i+1].childNodes[1].textContent=request.response[i].score;
+            for(let i=0;i<Object.keys(request.response).length-4;i++){
+                leadlist[2*i+1].childNodes[0].src="../images/users/"+request.response[i].id+".png";
+                leadlist[2*i+1].childNodes[0].onerror=function(){
+                    leadlist[2*i+1].childNodes[0].src="../images/miss.png";
+                };
+                leadlist[2*i+1].childNodes[1].textContent=request.response[i].login;
+                leadlist[2*i+1].childNodes[2].textContent=request.response[i].score;
                 leadlist[2*i+1].style.display="block";
             }
         }
@@ -68,10 +77,60 @@ function userCheck(){
 }
 
 //Функционал изменений в аккаунте
+var change_picture_button=document.getElementById("change_picture");
 var change_login_button=document.getElementById("change_login");
 var change_email_button=document.getElementById("change_email");
 var change_passw_button=document.getElementById("change_passw");
+var delete_account=document.getElementById("delete_account");
 var changer_url="../php/changer.php";
+
+change_picture_button.onclick=function(){
+    let form=document.getElementById('pictureform');
+    document.getElementById("prompt-pictureform-container").style.display="block";
+    form.cancel.onclick=function(){
+        document.getElementById('prompt-pictureform-container').style.display='none';
+    };
+    form.sent_picture.onclick=function(){
+        let requestURL="../php/setpic.php";
+        form=document.querySelector('#pictureform');
+        formData=new FormData(form);
+        data=formData;
+        let update_status;
+        fetch(requestURL,{
+            method: 'POST',
+            body: data
+        })
+            .then(response=>response.text())
+            .then(result=>update_status=result);
+        //Loading
+        let loading_status=false;
+        let changetimerId = setInterval(() => {
+            if(typeof(update_status)=="string"){
+                loading_status=true;
+                clearInterval(changetimerId);
+            }
+            if(update_status==="SUCCESS"){
+                msgToUser.textContent="Success update picture!";
+                msgBox.style.display='block';
+                msgBox.style.backgroundColor='lawngreen';
+                userCheck();
+            }else if(update_status==="FAIL"){
+                msgToUser.textContent="Fail update picture!";
+                msgBox.style.display='block';
+                msgBox.style.backgroundColor='red';
+            }
+        }, 100);
+        //Stop loading after 3 sec
+        setTimeout(() => { 
+            if(loading_status==false){
+                clearInterval(changetimerId);
+                msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
+                msgBox.style.display='block';
+                msgBox.style.backgroundColor='red';
+            }
+        }, 3000);
+    }
+}
 change_login_button.onclick=function(){
     let new_login=prompt("Insert new login: ");
     let update_status;
