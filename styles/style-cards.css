@@ -1,8 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+
 main {
+  font-family: "Baloo 2", cursive;
 	padding-top: 80px;
 	display: block;
 }
 
 #hero-title {
 	text-align: center;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	margin: 2rem 0;
+}
+
+.dark {
+  background: #110f16;
+}
+
+
+#hero a, #hero a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.quiz {
+  flex-wrap: wrap;
+  display: flex;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 3rem auto;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+}
+
+.quiz.dark {
+  background-color: #18151f;
+}
+
+.quiz a {
+  color: inherit;
+}
+
+.quiz i {
+  font-style: normal;
+}
+
+.quiz h3 {
+  /* margin-bottom: 0.5rem; */
+  font-weight: 500;
+  line-height: 1.2;
+}
+.quiz .small {
+  font-size: 80%;
+}
+.quiz .quiz-title {
+  margin: 0;
+  font-size: 1.75rem;
+}
+.quiz .quiz-img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.quiz .quiz-img-link {
+  display: contents;
+}
+.quiz .quiz-bar {
+  width: 50px;
+  height: 4px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #424242;
+  transition: width 0.2s ease;
+}
+.quiz .quiz-text {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.quiz .quiz-preview-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+  height: 100%;
+}
+.quiz .quiz-tagbox {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  justify-content: center;
+}
+.quiz .quiz-tagbox .tag-item {
+  display: inline-block;
+  background: rgba(83, 83, 83, 0.4);
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.quiz .quiz-tagbox .tag-item:hover {
+  background: rgba(83, 83, 83, 0.8);
+}
+.quiz:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  opacity: 1;
+  border-radius: 10px;
+}
+.quiz:hover .quiz-bar {
+  width: 100px;
+}
+
+.quiz .quiz-tagbox .green.play:hover {
+  background: #79dd09;
+  color: black;
+}
+
+.green .quiz-title:hover {
+  color: #79dd09;
+}
+
+.green .quiz-bar {
+  background-color: #79dd09;
+}
+
+.green::before {
+  background-image: linear-gradient(-30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+}
+
+.green:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+}
+
+.quiz .quiz-tagbox .blue.play:hover {
+  background: #0076bd;
+}
+
+.blue .quiz-title:hover {
+  color: #0076bd;
+}
+
+.blue .quiz-bar {
+  background-color: #0076bd;
+}
+
+.blue::before {
+  background-image: linear-gradient(-30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+}
+
+.blue:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+}
+
+.quiz .quiz-tagbox .red.play:hover {
+  background: #bd150b;
+}
+
+.red .quiz-title:hover {
+  color: #bd150b;
+}
+
+.red .quiz-bar {
+  background-color: #bd150b;
+}
+
+.red::before {
+  background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+}
+
+.red:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+}
+
+.quiz .quiz-tagbox .yellow.play:hover {
+  background: #bdbb49;
+  color: black;
+}
+
+.yellow .quiz-title:hover {
+  color: #bdbb49;
+}
+
+.yellow .quiz-bar {
+  background-color: #bdbb49;
+}
+
+.yellow::before {
+  background-image: linear-gradient(-30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+}
+
+.yellow:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+}
+
+@media screen and (min-width: 769px) {
+  .quiz {
+    flex-wrap: inherit;
+    max-width: 800px;
+  }
+  .quiz .quiz-title {
+    font-size: 2rem;
+  }
+  .quiz .quiz-tagbox {
+    justify-content: start;
+  }
+  .quiz .quiz-img {
+    max-width: 300px;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+  .quiz .quiz-text {
+    padding: 3rem;
+    width: 100%;
+  }
+  .quiz .media.quiz-text:before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #18151f;
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+  .quiz:hover .quiz-img {
+    transform: scale(1.1);
+  }
+  .quiz:nth-child(2n+1) {
+    flex-direction: row;
+  }
+  .quiz:nth-child(2n+0) {
+    flex-direction: row-reverse;
+  }
+  .quiz:nth-child(2n+1) .quiz-text::before {
+    left: -12px !important;
+    transform: rotate(4deg);
+  }
+  .quiz:nth-child(2n+0) .quiz-text::before {
+    right: -12px !important;
+    transform: rotate(-4deg);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .quiz {
+    flex-wrap: inherit;
+    max-width: 1100px;
+  }
+
+  .quiz-text {
+    padding: 2rem 3.5rem;
+  }
+
+  .quiz-text:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+
+  .quiz.dark .quiz-text:before {
+    background: #18151f;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+  .green::before {
+    background-image: linear-gradient(-80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+  }
+
+  .green:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+  }
+
+  .blue::before {
+    background-image: linear-gradient(-80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+  }
+
+  .blue:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+  }
+
+  .red::before {
+    background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+  }
+
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+  }
+
+  .yellow::before {
+    background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+  }
+
+  .yellow:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+  }
 }

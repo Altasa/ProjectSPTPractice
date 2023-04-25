@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&family=Saira&display=swap');
 * {
-	font-family: 'Quattrocento Sans', sans-serif;
-	font-size: 16px;
 	box-sizing: border-box;
 	scrollbar-width: none;
 	color: white;
 }
 body {
+	font-family: "Baloo 2", cursive;
+	font-size: 16px;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	background: #110f16;
 	overflow: hidden;
 	min-height: 100vh;
+	text-rendering: optimizeLegibility;
+  	font-weight: initial;
 }
 
 .top {
@@ -23,7 +25,7 @@ body {
 	/* height: 100px; */
 	color: #fff;
 	background-color: #110f16;
-	border-bottom: 4px solid antiquewhite;
+	/* border-bottom: 4px solid antiquewhite; */
 	z-index: 1000;
 }
 
