@@ -13,15 +13,41 @@
             	$query=mysqli_query($con, "SELECT `login` FROM `userlist` WHERE `login`='".$login."'");
             	$numrows=mysqli_num_rows($query);
             	if($numrows==0){
+					//Хеш подтверждения Email
+					$hash=md5($login.time());
 					$score=0;
-	            	$sql="INSERT INTO `userlist` (login, passw, email, score) VALUES('$login', '$passw', '$email', '$score')";
+	            	$sql="INSERT INTO `userlist` (login, passw, email, hash, score) VALUES('$login', '$passw', '$email', '$hash', '$score')";
                 	$result=mysqli_query($con, $sql);
                 	if($result) {
 						session_start();
 						$_SESSION['session_login']=$login;
 						$_SESSION['session_email']=$email;
 						$_SESSION['session_score']=$score;
-	                	echo "SUCCESS";
+						$_SESSION['session_picture']=mysqli_fetch_assoc(mysqli_query($con, "SELECT `id` FROM `userlist` WHERE `login`='".$login."'"))['id'];
+						echo "SUCCESS";
+						//Отправка письма подтверждения Email
+						require('smtp-func.php');
+						//Переменная $headers нужна для Email заголовка
+						$headers  = "MIME-Version: 1.0\r\n";
+						$headers .= "Content-type: text/html; charset=utf-8\r\n";
+						$headers .= "To: <$email>\r\n";
+						$headers .= "From: <bestquizever.limited@mail.ru>\r\n";
+						//Сообщение для Email
+						$message = '
+								<html>
+								<head>
+								<title>Подтверждение Email</title>
+								</head>
+								<body>
+								<p>Здравствуйте '.$login.' !</p>
+								<p>Подтверждение Email позволит вам сбросить пароль и блокирует несанкционированное удаление аккаунта.</p>
+								<p>Что бы подтвердить Email, перейдите по ссылке: <a href="http://f0781709.xsph.ru/php/confirm.php?hash='.$hash.'">подтвердить</a></p>
+								<p>Спасибо за Ваше участие!</p>
+								</body>
+								</html>
+								';
+						//Отправка почты
+						smtpmail($email, "BEST QUIZ EVER - Подтверждение Email", $message, $headers);
                 	} else {
 						echo "FAIL";
                 	}
