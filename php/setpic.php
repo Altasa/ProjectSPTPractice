@@ -2,7 +2,7 @@
 	session_start();
 	if(isset($_SESSION["session_login"])) {
             if(($_FILES['picture']['type']=="image/png")&&
-                ($_FILES['picture']['size']<10241)){
+                ($_FILES['picture']['size']<20481)){
                 if(move_uploaded_file($_FILES['picture']['tmp_name'], '../images/users/'.$_SESSION['session_picture'].'.png')){
                     echo "SUCCESS";
                 }else{
