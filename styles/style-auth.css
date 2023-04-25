@@ -1,11 +1,6 @@
 #img-for-auth {
-	position: absolute;
-	top: 3%;
-	left: 20%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	width: auto;
+  	height: auto;
 }
 
 #message {
