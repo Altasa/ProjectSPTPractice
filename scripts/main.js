@@ -70,4 +70,6 @@ let quiz2=document.getElementById('quiz2');
 quiz2.onclick=function(){go_quiz(2);}
 let quiz3=document.getElementById('quiz3');
 quiz3.onclick=function(){go_quiz(3);}
+let quiz4=document.getElementById('quiz4');
+quiz4.onclick=function(){go_quiz(4);}
 function go_quiz(value){location.href="./pages/quiz.html?id="+value;}

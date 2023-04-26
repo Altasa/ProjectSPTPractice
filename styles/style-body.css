@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&family=Saira&display=swap');
 * {
 	box-sizing: border-box;
-	scrollbar-width: none;
 	color: white;
 }
 body {
@@ -11,10 +10,17 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #110f16;
-	overflow: hidden;
 	min-height: 100vh;
 	text-rendering: optimizeLegibility;
   	font-weight: initial;
+	/* Hode scrollbar for IE, Edge & Firefox */
+	-ms-overflow-style: none; /* IE & Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari & Opera */
+body::-webkit-scrollbar {
+	display: none;
 }
 
 .top {
