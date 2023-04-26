@@ -21,8 +21,10 @@
             $result=mysqli_query($con, $sql);
             if($result) {
                 $_SESSION['session_email']=$new_val;
+                $_SESSION['session_emailstat']=0;
                 $hash=md5($new_val.time());
                 mysqli_query($con, "UPDATE `userlist` SET `hash` = '".$hash."' WHERE `login`='".$login."'");
+                mysqli_query($con, "UPDATE `userlist` SET `email_confirmed` =0 WHERE `login`='".$login."'");
                 echo "SUCCESS";
                 //Отправка письма подтверждения Email
 				require('smtp-func.php');
@@ -40,7 +42,7 @@
 						<body>
 						<p>Здравствуйте '.$login.' !</p>
 			    		<p>Подтверждение Email позволит вам сбросить пароль и блокирует несанкционированное удаление аккаунта.</p>
-						<p>Что бы подтвердить Email, перейдите по ссылке: <a href="http://f0781709.xsph.ru/php/confirm.php?hash='.$hash.'">подтвердить</a></p>
+						<p>Чтобы подтвердить Email, перейдите по ссылке: <a href="http://f0781709.xsph.ru/php/confirm.php?hash='.$hash.'">подтвердить</a></p>
 						<p>Спасибо за Ваше участие!</p>
 						</body>
 						</html>

@@ -7,6 +7,7 @@
             'login'=>$_SESSION['session_login'],
             'email'=>$_SESSION['session_email'],
             'picture'=>$_SESSION['session_picture'],
+            'emailstat'=>$_SESSION['session_emailstat'],
             'score'=>$_SESSION['session_score']
         );
         //Выборка списка лидеров

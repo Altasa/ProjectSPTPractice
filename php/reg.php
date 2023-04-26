@@ -23,7 +23,11 @@
 						$_SESSION['session_login']=$login;
 						$_SESSION['session_email']=$email;
 						$_SESSION['session_score']=$score;
-						$_SESSION['session_picture']=mysqli_fetch_assoc(mysqli_query($con, "SELECT `id` FROM `userlist` WHERE `login`='".$login."'"))['id'];
+						$query=mysqli_query($con, "SELECT `id`, `email_confirmed` FROM `userlist` WHERE `login`='".$login."'");
+						while($row=mysqli_fetch_assoc($query)){
+							$_SESSION['session_picture']=$row['id'];
+							$_SESSION['session_emailstat']=$row['email_confirmed'];
+						}
 						echo "SUCCESS";
 						//Отправка письма подтверждения Email
 						require('smtp-func.php');
@@ -41,7 +45,7 @@
 								<body>
 								<p>Здравствуйте '.$login.' !</p>
 								<p>Подтверждение Email позволит вам сбросить пароль и блокирует несанкционированное удаление аккаунта.</p>
-								<p>Что бы подтвердить Email, перейдите по ссылке: <a href="http://f0781709.xsph.ru/php/confirm.php?hash='.$hash.'">подтвердить</a></p>
+								<p>Чтобы подтвердить Email, перейдите по ссылке: <a href="http://f0781709.xsph.ru/php/confirm.php?hash='.$hash.'">подтвердить</a></p>
 								<p>Спасибо за Ваше участие!</p>
 								</body>
 								</html>

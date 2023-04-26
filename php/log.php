@@ -9,7 +9,7 @@
 	        $passw=htmlspecialchars($_POST['passw']);
 			if((strlen($login)<33)||(strlen($passw)<33)){
 				require("./dbcon.php");
-				$query=mysqli_query($con, "SELECT `login`, `passw`, `email`, `id`, `score` FROM `userlist` WHERE `login`='".$login."'");
+				$query=mysqli_query($con, "SELECT `login`, `passw`, `email`, `id`, `email_confirmed`, `score` FROM `userlist` WHERE `login`='".$login."'");
 				$numrows=mysqli_num_rows($query);
 				if($numrows!=0) {
 					while($row=mysqli_fetch_assoc($query)) {
@@ -17,12 +17,14 @@
 						$dbpassw=$row['passw'];
 						$dbemail=$row['email'];
 						$dbpicture=$row['id'];
+						$db_emailstat=$row['email_confirmed'];
 						$dbscore=$row['score'];
 					}
 					if($login == $dblogin && $passw == $dbpassw) {
 						$_SESSION['session_login']=$login;
 						$_SESSION['session_email']=$dbemail;
 						$_SESSION['session_picture']=$dbpicture;
+						$_SESSION['session_emailstat']=$db_emailstat;
 						$_SESSION['session_score']=$dbscore;
 						echo "ACLOG";
 					}else{
