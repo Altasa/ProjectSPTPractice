@@ -144,9 +144,12 @@ main {
   width: 120px;
 }
 
-.quiz .quiz-tagbox .green.play:hover {
+.quiz .quiz-tagbox .green.play {
   background: #79dd09;
-  color: black;
+}
+
+.quiz .quiz-tagbox .green.play:hover {
+  background: #539c00;
 }
 
 /* .green .quiz-title:hover {
@@ -165,8 +168,12 @@ main {
   background-image: linear-gradient(30deg, rgba(121, 221, 9, 0.1), transparent 50%);
 }
 
-.quiz .quiz-tagbox .blue.play:hover {
+.quiz .quiz-tagbox .blue.play {
   background: #0076bd;
+}
+
+.quiz .quiz-tagbox .blue.play:hover {
+  background: #0052bd;
 }
 
 /* .blue .quiz-title:hover {
@@ -185,8 +192,12 @@ main {
   background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
 }
 
-.quiz .quiz-tagbox .red.play:hover {
+.quiz .quiz-tagbox .red.play {
   background: #bd150b;
+}
+
+.quiz .quiz-tagbox .red.play:hover {
+  background: #910000;
 }
 
 /* .red .quiz-title:hover {
@@ -205,9 +216,12 @@ main {
   background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
 }
 
-.quiz .quiz-tagbox .yellow.play:hover {
+.quiz .quiz-tagbox .yellow.play {
   background: #bdbb49;
-  color: black;
+}
+
+.quiz .quiz-tagbox .yellow.play:hover {
+  background: #7e7c00;
 }
 
 /* .yellow .quiz-title:hover {
