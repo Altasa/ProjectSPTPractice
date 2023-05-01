@@ -50,7 +50,7 @@
 #prompt-signupform-container, #prompt-signinform-container {
 	position: fixed;
 	width: 423px;
-	height: 630px;
+	height: 590px;
 	background-image: linear-gradient(to right, rgba(46, 70, 41, 0.5),rgba(70, 70, 70, 0.5),rgba(46, 70, 41, 0.5)), url('https://i.pinimg.com/564x/a2/f1/6d/a2f16df33fc51e18423ff469ef133e36.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
