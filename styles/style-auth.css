@@ -42,18 +42,14 @@
 
 #forms {
 	position: relative;
-	top: 3%;
-	right: 20%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	left: 60%;
+	
 }
 
 #prompt-signupform-container, #prompt-signinform-container {
 	position: fixed;
 	width: 423px;
-	height: 634.5px;
+	height: 630px;
 	background-image: linear-gradient(to right, rgba(46, 70, 41, 0.5),rgba(70, 70, 70, 0.5),rgba(46, 70, 41, 0.5)), url('https://i.pinimg.com/564x/a2/f1/6d/a2f16df33fc51e18423ff469ef133e36.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
