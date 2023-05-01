@@ -145,11 +145,12 @@ main {
 }
 
 .quiz .quiz-tagbox .green.play {
-  background: #79dd09;
+  background: #478304;
+  color: #ffffff;
 }
 
 .quiz .quiz-tagbox .green.play:hover {
-  background: #539c00;
+  background: #3a6806;
 }
 
 /* .green .quiz-title:hover {
@@ -157,7 +158,7 @@ main {
 } */
 
 .green .quiz-bar {
-  background-color: #79dd09;
+  background-color: #478304;
 }
 
 .green::before {
@@ -217,11 +218,11 @@ main {
 }
 
 .quiz .quiz-tagbox .yellow.play {
-  background: #bdbb49;
+  background: #797722;
 }
 
 .quiz .quiz-tagbox .yellow.play:hover {
-  background: #7e7c00;
+  background: #64610d;
 }
 
 /* .yellow .quiz-title:hover {
@@ -229,7 +230,7 @@ main {
 } */
 
 .yellow .quiz-bar {
-  background-color: #bdbb49;
+  background-color: #797722;
 }
 
 .yellow::before {
