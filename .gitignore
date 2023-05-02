@@ -6,5 +6,8 @@ mailconfig*
 .htaccess
 # файлы таблиц БД
 *sql
+###
+dist
+settings.json
 # файлы, требующие донастройки
 cards_preproc.scss
