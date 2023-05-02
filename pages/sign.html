@@ -40,13 +40,14 @@
             <section id="forms">
                 <div id="prompt-signinform-container">
                     <h2 class="form-prompt-msg" id="signin-prompt-header">Sign In</h2>
+                    <p class="form-prompt-msg" id="signin-prompt-message"></p>
                     <form id="signinform">
                         <div class ="inputBox">
-                            <span>Username</span>
+                            <span id="form-prompt-username">Username</span>
                             <input type="text" name="login" required>
                         </div>
                         <div class="inputBox">
-                            <span>Password</span>
+                            <span id="form-prompt-password">Password</span>
                             <input type="password" name="passw" required>
                         </div>
                         <div class="inputBox">
@@ -55,7 +56,7 @@
                             <input name="cancel" type="button" value="Cancel">
                         </div>
                         <hr class="auth-hr">
-                        <a href="#" class="lost-pass">Forgot Password?</a>
+                        <a id="lost_passw" class="lost-pass">Forgot Password?</a>
                     </form>
                 </div>
                 <div id="prompt-signupform-container">

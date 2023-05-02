@@ -64,6 +64,6 @@
             echo "FAIL";
         }
     }else{
-        echo "FAIL";
+        echo "EMPTY";
     }
     ?>

@@ -1,17 +1,16 @@
 <?php   //Обработчик запроса удаления аккаунта
-    if($_GET['hash']){
+    session_start();
+    if(($_GET['hash'])&&(isset($_SESSION["session_login"]))){
         $hash=htmlspecialchars($_GET['hash']);
         //Получаем id и подтверждено ли Email
         require("./dbcon.php");
-        if($result=mysqli_query($con, "SELECT `id`, `email_confirmed` FROM `userlist` WHERE `hash`='".$hash."'")) {
+        if($result=mysqli_query($con, "SELECT `login`, `email_confirmed` FROM `userlist` WHERE `hash`='".$hash."'")) {
             while($row=mysqli_fetch_assoc($result)){ 
-                $id=$row['id'];
+                $login=$row['login'];
                 $emailstat=$row['email_confirmed'];
             }
-            //Проверяет подтверждён ли Email
-            if($emailstat==1){
-                //Если да, произвести удаление
-                mysqli_query($con, "DELETE FROM `userlist` WHERE `id`=".$id);
+            if(($emailstat==1)&&($login==$_SESSION['session_login'])){
+                mysqli_query($con, "DELETE FROM `userlist` WHERE `login`=".$login);
                 header("Location: ../php/logout.php");
             } else {
                 header("Location: ../pages/sign.html?id=in");

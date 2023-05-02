@@ -6,3 +6,5 @@ mailconfig*
 .htaccess
 # файлы таблиц БД
 *sql
+# файлы, требующие донастройки
+index copy.html

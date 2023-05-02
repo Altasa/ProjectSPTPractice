@@ -67,9 +67,10 @@ body::-webkit-scrollbar {
 	height: 400px;
 }
 
-.top nav h1 {
-	font-size: 2em;
-	margin: 10px auto;
+.top nav h1 a {
+	/* font-size: 2em;
+	margin: 10px auto; */
+	text-decoration: none;
 }
 
 .top nav ul li a {
