@@ -90,7 +90,7 @@ function userCheck(){
                             clearInterval(changetimerId);
                         }
                         if(update_status==="SUCCESS"){
-                            msgToUser.textContent="New confirmation letter have been sent";
+                            msgToUser.textContent="New confirmation letter has been sent to your email";
                             msgBox.style.display='block';
                             msgBox.style.backgroundColor='lawngreen';
                             userCheck();

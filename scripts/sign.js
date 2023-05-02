@@ -43,8 +43,7 @@ function userCheck(){
             register.onclick=function(){
                 location.href = "../index.html";
             }
-            
-            //let message="#";    //Нужно добавить отображение специальных сообщений
+            let message=document.getElementById('signin-prompt-message');    //Нужно добавить отображение специальных сообщений
 
             let sign_id=window.location.href.split("?")[1].split("=")[1];
             if(sign_id=="in"){   //Форма входа в учетную запись
@@ -55,6 +54,7 @@ function userCheck(){
                 
                 let form=document.getElementById('signinform');
                 let container=document.getElementById('prompt-signinform-container');
+                let lost_passw_button=document.getElementById("lost_passw");
                 container.style.display='block';
                 
                 form.cancel.onclick=function(){
@@ -105,6 +105,59 @@ function userCheck(){
                         }
                     }, 3000);
                 }
+
+                lost_passw_button.onclick=function(){
+                    document.getElementById('signin-prompt-header').textContent="Remember password";
+                    message.textContent="Insert email or login to get email instruction to reset password";
+                    document.getElementById('form-prompt-username').textContent="Login";
+                    document.getElementById('form-prompt-password').textContent="Email";
+
+                    form.sign_in.onclick=function(){
+                        let requestURL="../php/lost_passw.php";
+                        form=document.querySelector('#signinform');
+                        formData=new FormData(form);
+                        formData.append("lost_passw", "");
+                        data=new URLSearchParams(formData);
+                        let remember_status;
+                        fetch(requestURL,{
+                            method: 'POST',
+                            body: data
+                        })
+                            .then(response=>response.text())
+                            .then(result=>remember_status=result);
+                        //Загрузка ответа сервера
+                        let loading_status=false;
+                        let logtimerId = setInterval(() => {
+                            if(remember_status==="EMPTY"){
+                                message.innerText="At less one of fields are required!";
+                            }else if(remember_status==="INVLEN"){
+                                message.innerText="Max 32 symbols for login and 64 for email!";
+                            }else if(remember_status==="INVLOG"){
+                                message.innerText="Invalid Login!";
+                            }else if(remember_status==="INVEML"){
+                                message.innerText="Invalid or non-confirmed Email!";
+                            }else if(remember_status==="UNKER"){
+                                message.innerText="Unknown Server Error\nPlease contact administration.";
+                            }else if(remember_status==="SUCCESS"){
+                                msgToUser.textContent="Letter with new password has been sent to your email";
+                                msgBox.style.display='block';
+                                userCheck();
+                            }
+                            if(typeof(remember_status)=="string"){
+                                loading_status=true;
+                                clearInterval(logtimerId);
+                            }
+                        }, 100);
+                        //Прерывание по истечении 3 секунд
+                        setTimeout(() => { 
+                            if(loading_status==false){
+                                clearInterval(logtimerId);
+                                message.innerText="Cannot connect to server\nPlease contact administration.";
+                            }
+                        }, 3000);
+                    }
+                }
+
             }else if(sign_id=="up"){    //Форма регистрации учетной записи
                 login.value="Sign In";
                 login.onclick=function(){

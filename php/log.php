@@ -7,7 +7,7 @@
     	if(!empty($_POST['login']) && !empty($_POST['passw'])) {
 	        $login=htmlspecialchars($_POST['login']);
 	        $passw=htmlspecialchars($_POST['passw']);
-			if((strlen($login)<33)||(strlen($passw)<33)){
+			if((strlen($login)<33)&&(strlen($passw)<33)){
 				require("./dbcon.php");
 				$query=mysqli_query($con, "SELECT `login`, `passw`, `email`, `id`, `email_confirmed`, `score` FROM `userlist` WHERE `login`='".$login."'");
 				$numrows=mysqli_num_rows($query);
