@@ -111,6 +111,15 @@ function userCheck(){
                     message.textContent="Insert email or login to get email instruction to reset password";
                     document.getElementById('form-prompt-username').textContent="Login";
                     document.getElementById('form-prompt-password').textContent="Email";
+                    form.sign_in.value="Reset password";
+                    form.cancel.onclick=function(){
+                        document.getElementById('signin-prompt-header').textContent="Sign In";
+                        message.textContent="";
+                        document.getElementById('form-prompt-username').textContent="Username";
+                        document.getElementById('form-prompt-password').textContent="Password";
+                        form.sign_in.value="Sign In";
+                        userCheck();
+                    }
 
                     form.sign_in.onclick=function(){
                         let requestURL="../php/lost_passw.php";
