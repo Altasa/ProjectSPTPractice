@@ -1,148 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Best Quiz Ever</title>
-        <meta name="description" content="Play the best quiz, collect points and competite with others!">
-        <meta property="og:title" content="Best Quiz Ever">
-        <meta property="og:url" content="http://f0781709.xsph.ru/">
-        <meta property="og:image" content="./images/og_logo.png">
-        <meta property="og:description" content="Play the best quiz, collect points and compete with others!">
-        <link rel="icon" href="./images/favicon32.ico" type="image/x-icon" sizes="32x32">
-        <link rel="icon" href="./images/favicon64.ico" type="image/x-icon" sizes="64x64">
-        <link href="./styles/body.css" rel="stylesheet" type="text/css">
-        <link href="./styles/cards.css" rel="stylesheet" type="text/css">
-        <link href="./styles/auth.css" rel="stylesheet" type="text/css">
-        <link href="./styles/account.css" rel="stylesheet" type="text/css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <!--Политика безопасности загружаемых скриптов: только с того же адреса-->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
-    </head>
-    <body>
-        <!--Заголовок (шапка) страницы-->
-    	<header class="top" id="main_h">
-            <nav>
-                <h1><a href=".">BEST QUIZ EVER</a></h1>
-                <ul>
-                    <li><a href="https://github.com/Altasa/SPTP">GitHub</a></li>
-                    <li><input type="button" class="huab" id="a-login" value="Sign In"></li>
-                    <li><input type="button" class="huab" id="a-register" value="Sign Up"></li>
-                </ul>
-            </nav>
-    	</header>
-        <main>
-            <!--Сообщение пользователю-->
-            <section id="message">
-                    <span id="message-to-user"></span>
-                    <img id="message-close-icon" src="./images/close.png">
-            </section>
-            <!--Таблица доступных викторин-->
-            <section id="hero">
-                <div class="container">
-                    <h2 id="hero-title">Quizzes available</h2>
-                    <article class="quiz dark blue">
-                        <a class="quiz-img-link" href="#">
-                            <img class="quiz-img" src="https://picsum.photos/501/500" alt="Image Title" />
-                        </a>
-                        <div class="quiz-text">
-                            <h3 class="quiz-title">WEB Develop</h3>
-                            <div class="quiz-subtitle small">
-                                <time datetime="2023-01-01 00:00:00">
-                                    <i>Thu, January 1st 1970</i>
-                                </time>
-                            </div>
-                            <div class="quiz-bar"></div>
-                            <div class="quiz-preview-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-                            <ul class="quiz-tagbox">
-                                <li class="tag-item"><i class="fas fa-tag mr-2">Quiz</i></li>
-                                <li class="tag-item"><i>Very Easy</i></li>
-                                <li id="quiz1" class="tag-item play blue"><i>Accept Challenge</i></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="quiz dark red">
-                        <a class="quiz-img-link" href="#">
-                            <img class="quiz-img" src="https://picsum.photos/1000/1000" alt="Image Title" />
-                        </a>
-                        <div class="quiz-text">
-                            <h3 class="quiz-title red">Facts About Cats</h3>
-                            <div class="quiz-subtitle small">
-                                <time datetime="2023-01-01 00:00:00">
-                                    <i>Thu, January 1st 1970</i>
-                                </time>
-                            </div>
-                            <div class="quiz-bar"></div>
-                            <div class="quiz-preview-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-                            <ul class="quiz-tagbox">
-                                <li class="tag-item"><i class="fas fa-tag mr-2">Timed Quiz</i></li>
-                                <li class="tag-item"><i>Hard</i></li>
-                                <li id="quiz2" class="tag-item play red"><i>Accept Challenge</i></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="quiz dark yellow">
-                        <a class="quiz-img-link" href="#">
-                            <img class="quiz-img" src="https://picsum.photos/500/501" alt="Image Title" />
-                        </a>
-                        <div class="quiz-text">
-                            <h3 class="quiz-title yellow">Kinomania</h3>
-                            <div class="quiz-subtitle small">
-                                <time datetime="2023-01-01 00:00:00">
-                                    <i>Thu, January 1st 1970</i>
-                                </time>
-                            </div>
-                            <div class="quiz-bar"></div>
-                            <div class="quiz-preview-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-                            <ul class="quiz-tagbox">
-                                <li class="tag-item"><i class="fas fa-tag mr-2">Quiz</i></li>
-                                <li class="tag-item"><i>Medium</i></li>
-                                <li id="quiz3" class="tag-item play yellow"><i>Accept Challenge</i></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="quiz dark green">
-                        <a class="quiz-img-link" href="#">
-                            <img class="quiz-img" src="https://picsum.photos/501/501" alt="Image Title" />
-                        </a>
-                        <div class="quiz-text">
-                            <h3 class="quiz-title green">Quiz Title</h3>
-                            <div class="quiz-subtitle small">
-                                <time datetime="2023-01-01 00:00:00">
-                                    <i>Thu, January 1st 1970</i>
-                                </time>
-                            </div>
-                            <div class="quiz-bar"></div>
-                            <div class="quiz-preview-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-                            <ul class="quiz-tagbox">
-                                <li class="tag-item"><i class="fas fa-tag mr-2">Quiz</i></li>
-                                <li class="tag-item"><i>Easy</i></li>
-                                <li id="quiz4" class="tag-item play green">Accept Challenge</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-        <!--Сведения об авторах-->
-        <footer class="bottom" id="main_f">
-            <div id="commons">
-                <p>Created and maintained under a <a class="hua" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> on behalf of Nikita Zhdanov, Maxim Sozurukov, Mikhail Verkhov.</p>
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+  <head>
+    <meta charset="utf-8">
+    <title>Best Quiz Ever</title>
+    <meta name="description" content="Play the best quiz, collect points and competite with others!">
+    <meta property="og:title" content="Best Quiz Ever">
+    <meta property="og:url" content="http://f0781709.xsph.ru/">
+    <meta property="og:image" content="./images/og_logo.png">
+    <meta property="og:description" content="Play the best quiz, collect points and compete with others!">
+    <link rel="icon" href="./images/favicon32.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="./images/favicon64.ico" type="image/x-icon" sizes="64x64">
+    <link href="./styles/body.css" rel="stylesheet" type="text/css">
+    <link href="./styles/cards.css" rel="stylesheet" type="text/css">
+    <link href="./styles/auth.css" rel="stylesheet" type="text/css">
+    <link href="./styles/account.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Политика безопасности загружаемых скриптов: только с того же адреса-->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ">
+  </head>
+  <body>
+    <!--Заголовок (шапка) страницы-->
+    <header class="top" id="main_h">
+      <nav>
+        <h1><a href=".">BEST QUIZ EVER</a></h1>
+        <ul>
+          <li><a href="https://github.com/Altasa/SPTP">GitHub</a></li>
+          <li>
+            <input class="huab" id="a-login" type="button" value="Sign In">
+          </li>
+          <li>
+            <input class="huab" id="a-register" type="button" value="Sign Up">
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!--Сообщение пользователю-->
+      <section id="message"><span id="message-to-user"></span><img id="message-close-icon" src=".images/close.png"></section>
+      <!--Таблица доступных викторин-->
+      <section id="hero">
+        <div class="container">
+          <h2 id="hero-title">Quizzes available</h2>
+          <article class="quiz dark blue"><a class="quiz__img-link" href="#"><img class="quiz__img" src="https://picsum.photos/501/500" alt="Image Title"></a>
+            <div class="quiz__text">
+              <h3 class="quiz__title">WEB Develop</h3>
+              <div class="quiz__subtitle small">
+                <time datetime="1970-01-01 00:00:00"><i>Thu, January 1st 1970</i></time>
+              </div>
+              <div class="quiz__bar"></div>
+              <div class="quiz__preview-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+              <ul class="quiz__tagbox">
+                <li class="tagbox__item"><i>Quiz</i></li>
+                <li class="tagbox__item"><i>Very Easy</i></li>
+                <li class="tagbox__item play blue"><i>Accept Challenge</i></li>
+              </ul>
             </div>
-            <div id="links_f">
-                <a class="hua" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Legal Information</a>
-                <a class="hua" href="https://github.com/Altasa/SPTP" target="_blank">Github Repository</a>
-            </div>
-        </footer>
-        <script>    //Безопасный загрузчик скрипта
-            var mainscript=document.createElement('script');
-            mainscript.src="./scripts/main.js";
-            document.head.appendChild(mainscript);
-            mainscript.onerror=function() {   //Перезагрузка при сбое
-                script=document.createElement('script');
-                script.src="./scripts/main.js";
-                document.body.append(script);
-            };
-        </script>
-    </body>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!--Сведения об авторах-->
+    <footer class="bottom" id="main_f">
+      <div id="commons">
+        <p>Created and maintained under a <a class="hua" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> on behalf of Nikita Zhdanov, Maxim Sozurukov, Mikhail Verkhov.</p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"></a>
+      </div>
+      <div id="links_f"><a class="hua" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Legal Information</a><a class="hua" href="https://github.com/Altasa/SPTP" target="_blank">GitHub Repository</a></div>
+    </footer>
+    <!--Безопасный загрузчик скрипта-->
+    <script>var mainscript=document.createElement('script');
+mainscript.src="./scripts/main.js";
+document.head.appendChild(mainscript);
+mainscript.onerror=function() {   //Перезагрузка при сбое
+    script=document.createElement('script');
+    script.src="./scripts/main.js";
+    document.body.append(script);
+};
+    </script>
+  </body>
 </html>

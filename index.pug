@@ -1,0 +1,70 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title Best Quiz Ever
+        meta(name="description", content="Play the best quiz, collect points and competite with others!")
+        meta(property="og:title", content="Best Quiz Ever")
+        meta(property="og:url", content="http://f0781709.xsph.ru/")
+        meta(property="og:image", content="./images/og_logo.png")
+        meta(property="og:description", content="Play the best quiz, collect points and compete with others!")
+        link(rel="icon", href="./images/favicon32.ico", type="image/x-icon" sizes="32x32")
+        link(rel="icon", href="./images/favicon64.ico", type="image/x-icon" sizes="64x64")
+        link(href="./styles/body.css", rel="stylesheet", type="text/css")
+        link(href="./styles/cards.css", rel="stylesheet", type="text/css")
+        link(href="./styles/auth.css", rel="stylesheet", type="text/css")
+        link(href="./styles/account.css", rel="stylesheet", type="text/css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //Политика безопасности загружаемых скриптов: только с того же адреса
+        meta(http-equiv="Content-Security-Policy", content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ")
+    body
+        //Заголовок (шапка) страницы
+        header.top#main_h
+            nav
+                h1
+                    a(href=".") BEST QUIZ EVER
+                ul
+                    li
+                        a(href="https://github.com/Altasa/SPTP") GitHub
+                    li
+                        input.huab#a-login(type="button", value="Sign In")
+                    li
+                        input.huab#a-register(type="button", value="Sign Up")
+        main
+            //Сообщение пользователю
+            section#message
+                span#message-to-user
+                img#message-close-icon(src=".images/close.png")
+            //Таблица доступных викторин
+            section#hero
+                .container
+                    h2#hero-title Quizzes available
+                    article.quiz.dark.blue
+                        a.quiz__img-link(href="#")
+                            img.quiz__img(src="https://picsum.photos/501/500", alt="Image Title")
+                        .quiz__text
+                            h3.quiz__title WEB Develop
+                            .quiz__subtitle.small
+                                time(datetime="1970-01-01 00:00:00")
+                                    i Thu, January 1st 1970
+                            .quiz__bar
+                            .quiz__preview-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!
+                            ul.quiz__tagbox
+                                li.tagbox__item
+                                    i Quiz
+                                li.tagbox__item
+                                    i Very Easy
+                                li.tagbox__item.play.blue
+                                    i Accept Challenge
+        //Сведения об авторах
+        footer.bottom#main_f
+            #commons
+                p Created and maintained under a <a class="hua" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> on behalf of Nikita Zhdanov, Maxim Sozurukov, Mikhail Verkhov.
+                a(rel="license", href="http://creativecommons.org/licenses/by-nc-sa/4.0/", target="_blank")
+                    img(src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png", alt="Creative Commons License",style="border-width:0")
+            #links_f
+                a.hua(rel="license", href="http://creativecommons.org/licenses/by-nc-sa/4.0/", target="_blank") Legal Information
+                a.hua(href="https://github.com/Altasa/SPTP", target="_blank") GitHub Repository
+        //Безопасный загрузчик скрипта
+        script
+            include scripts/save_script_loader.js

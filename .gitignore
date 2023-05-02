@@ -7,4 +7,4 @@ mailconfig*
 # файлы таблиц БД
 *sql
 # файлы, требующие донастройки
-index copy.html
+cards_preproc.scss
