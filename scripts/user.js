@@ -159,6 +159,7 @@ change_picture_button.onclick=function(){
                 msgToUser.textContent="Success update picture!";
                 msgBox.style.display='block';
                 msgBox.style.backgroundColor='lawngreen';
+                document.getElementById('prompt-pictureform-container').style.display='none';
                 userCheck();
             }else if(update_status==="FAIL"){
                 msgToUser.textContent="Fail update picture!";

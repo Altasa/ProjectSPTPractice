@@ -109,8 +109,9 @@ function userCheck(){
                 lost_passw_button.onclick=function(){
                     document.getElementById('signin-prompt-header').textContent="Remember password";
                     message.textContent="Insert email or login to get email instruction to reset password";
-                    document.getElementById('form-prompt-username').textContent="Login";
-                    document.getElementById('form-prompt-password').textContent="Email";
+                    document.getElementById('form-prompt-username').textContent="Login or Email";
+                    document.getElementById('form-prompt-password').style.display="none";
+                    document.getElementById('form-prompt-password-input').style.display="none";
                     form.sign_in.value="Reset password";
                     form.cancel.onclick=function(){
                         document.getElementById('signin-prompt-header').textContent="Sign In";
@@ -118,6 +119,8 @@ function userCheck(){
                         document.getElementById('form-prompt-username').textContent="Username";
                         document.getElementById('form-prompt-password').textContent="Password";
                         form.sign_in.value="Sign In";
+                        document.getElementById('form-prompt-password').style.display="block";
+                        document.getElementById('form-prompt-password-input').style.display="block";
                         userCheck();
                     }
 
@@ -138,13 +141,13 @@ function userCheck(){
                         let loading_status=false;
                         let logtimerId = setInterval(() => {
                             if(remember_status==="EMPTY"){
-                                message.innerText="At less one of fields are required!";
+                                message.innerText="field is required!";
                             }else if(remember_status==="INVLEN"){
-                                message.innerText="Max 32 symbols for login and 64 for email!";
+                                message.innerText="Max 64 symbols for email!";
                             }else if(remember_status==="INVLOG"){
-                                message.innerText="Invalid Login!";
+                                message.innerText="User not found!";
                             }else if(remember_status==="INVEML"){
-                                message.innerText="Invalid or non-confirmed Email!";
+                                message.innerText="Non-confirmed email!";
                             }else if(remember_status==="UNKER"){
                                 message.innerText="Unknown Server Error\nPlease contact administration.";
                             }else if(remember_status==="SUCCESS"){

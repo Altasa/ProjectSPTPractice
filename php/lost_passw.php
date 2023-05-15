@@ -1,50 +1,61 @@
 <?php	//Сброс пароля
 	if(isset($_POST["lost_passw"])) {
-    	if(!empty($_POST['login']) || !empty($_POST['passw'])) {
+    	if(!empty($_POST['login'])) {
 	        $login=htmlspecialchars($_POST['login']);
-	        $email=htmlspecialchars($_POST['passw']);
-			if((strlen($login)<33)&&(strlen($email)<65)){
+			if(strlen($login)<65){
 				require("./dbcon.php");
 				require('smtp-func.php');
-				if(!empty($_POST['login'])){
-					$query=mysqli_query($con, "SELECT `login`, `email` FROM `userlist` WHERE `login`='".$login."'");
-					$numrows=mysqli_num_rows($query);
-					if($numrows!=0) {
-						while($row=mysqli_fetch_assoc($query)) {
-							$dblogin=$row['login'];
-							$dbemail=$row['email'];
-						}
+				$query=mysqli_query($con, "SELECT `login`, `email`, `email_confirmed` FROM `userlist` WHERE `login`='".$login."'");
+				$numrows=mysqli_num_rows($query);
+				if($numrows!=0) {
+					while($row=mysqli_fetch_assoc($query)) {
+						$dblogin=$row['login'];
+						$dbemail=$row['email'];
+						$email_stat=$row['email_confirmed'];
+					}
+					if($email_stat==1){
 						$new_passw=substr(md5($dblogin.time()), 0, 5);
-						$sql="UPDATE `userlist` SET `passw` = '".$new_passw."' WHERE `login`='".$dblogin."'";
-						$result=mysqli_query($con, $sql);
-						if($result) {
-							sendnewpassw($dblogin, $dbemail, $new_passw);
-							echo "SUCCESS";
+						if(sendnewpassw($dblogin, $dbemail, $new_passw)){
+							$sql="UPDATE `userlist` SET `passw` = '".$new_passw."' WHERE `login`='".$dblogin."'";
+							$result=mysqli_query($con, $sql);
+							if($result) {
+								echo "SUCCESS";
+							}else{
+								echo "UNKER";
+							}
 						}else{
 							echo "UNKER";
 						}
 					}else{
-						echo "INVLOG";
+						echo "INVEML";
 					}
 				}else{
-                    $query=mysqli_query($con, "SELECT `login`, `email` FROM `userlist` WHERE `email`='".$email."'");
+                    $query=mysqli_query($con, "SELECT `login`, `email`, `email_confirmed` FROM `userlist` WHERE `email`='".$login."'");
 				    $numrows=mysqli_num_rows($query);
 				    if($numrows!=0) {
                         while($row=mysqli_fetch_assoc($query)) {
 							$dblogin=$row['login'];
                             $dbemail=$row['email'];
+							$email_stat=$row['email_confirmed'];
 					    }
-						$new_passw=substr(md5($dblogin.time()), 0, 5);
-						$sql="UPDATE `userlist` SET `passw` = '".$new_passw."' WHERE `login`='".$dblogin."'";
-						$result=mysqli_query($con, $sql);
-						if($result) {
-							sendnewpassw($dblogin, $dbemail, $new_passw);
-							echo "SUCCESS";
+						if($email_stat==1){
+							$new_passw=substr(md5($dblogin.time()), 0, 5);
+							if(sendnewpassw($dblogin, $dbemail, $new_passw)){
+								$sql="UPDATE `userlist` SET `passw` = '".$new_passw."' WHERE `login`='".$dblogin."'";
+								$result=mysqli_query($con, $sql);
+								if($result) {
+									echo "SUCCESS";
+								}else{
+									echo "UNKER";
+								}
+							}else{
+								echo "UNKER";
+							}
 						}else{
-							echo "UNKER";
+							echo "INVEML";
 						}
                     }else{
-						echo "INVEML";
+						echo "INVLOG";
 					}
 				}
 			}else{

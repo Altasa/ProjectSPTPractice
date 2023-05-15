@@ -1,8 +1,4 @@
 <?php
-    //session_start();
-    //if(!isset($_SESSION["session_login"])){
-    //    header("Location: ../pages/sign.html?id=in");
-    //}else 
     if($_GET['hash']){
         $hash=htmlspecialchars($_GET['hash']);
         //Получаем id и подтверждено ли Email
@@ -16,6 +12,7 @@
             if($emailstat!=1){
                 //Если нет, то делаем подтверждение
                 mysqli_query($con, "UPDATE `userlist` SET `email_confirmed`=1 WHERE `id`=".$id);
+                session_start();
                 $_SESSION['session_emailstat']=1;
                 header("Location: ../pages/user.html");
             } else {
@@ -25,6 +22,6 @@
             header("Location: ../pages/sign.html?id=in");
         }
     }else{
-        header("Location: ../pages/index.html");
+        header("Location: ..");
     }
     ?>
