@@ -133,6 +133,13 @@ body::-webkit-scrollbar {
 	width: 100%;
 }
 
+html{
+	scroll-snap-type: y mandatory;
+}
+#hero-img, article, #main_f{
+	scroll-snap-align: end;
+}
+
 #hero-img {
 	position: relative;
 	width: 100vw;

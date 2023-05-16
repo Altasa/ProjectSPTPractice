@@ -11,7 +11,19 @@ function stickyHeader() {
         header.classList.remove("fixed");
     }
 }
-
+/*
+//Overflow jump
+const observer=new IntersectionObserver(entries =>{
+    entries.forEach(entry =>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('overflow-animation');
+        }else{
+            entry.target.classList.remove('overflow-animation');
+        }
+    });
+});
+observer.observe(document.getElementById("hero-title"));
+*/
 //Отображение сообщения пользователю
 var msgBox=document.getElementById("message");
 var msgToUser=document.getElementById("message-to-user");
