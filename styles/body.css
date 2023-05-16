@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&family=Saira&display=swap');
 * {
 	box-sizing: border-box;
-	color: white;
+	-ms-overflow-style: none; /* IE & Edge */
+	scrollbar-width: none; /* Firefox */
 }
 body {
 	font-family: "Baloo 2", cursive;
@@ -30,7 +31,7 @@ body::-webkit-scrollbar {
 	width: 100%;
 	/* height: 100px; */
 	color: #fff;
-	background-color: #110f16;
+	background-color: rgba(0, 0, 0, 0);
 	/* border-bottom: 4px solid antiquewhite; */
 	z-index: 1000;
 }
@@ -71,6 +72,7 @@ body::-webkit-scrollbar {
 	/* font-size: 2em;
 	margin: 10px auto; */
 	text-decoration: none;
+	color: white;
 }
 
 .top nav ul li a {
@@ -129,6 +131,25 @@ body::-webkit-scrollbar {
 	position: fixed;
 	top: 0;
 	width: 100%;
+}
+
+#hero-img {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+#hero-img::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../images/hero_img.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 }
 
 .bottom {

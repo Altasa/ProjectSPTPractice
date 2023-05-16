@@ -7,52 +7,40 @@
 	padding: 5px 5px 5px 70px;
 	height: 450px;
 	width: 80%;
-	color: black;
 }
 
 .userinfo {
 	width: 50%;
 	margin-top: 1%;
-	color: black;
 }
 
 #username, #useremail, #userscore, #usertitle, #emailtitle, #scoretitle {
 	display: inline-block;
 	width: 30%;
-	color: black;
 }
 
 #leaderboard {
 	float: right;
 	margin-right: 15%;
 	position: relative;
-	color: black;
 }
 
 #leaderboardtitle {
 	position: relative;
 	left: 60%;
-	color: black;
 } 
 
 #lead2, #lead3, #lead4, #lead5 {
 	display: none;
-	color: black;
 }
 
 #leaderboardcontent {
 	width: 170%;
-	color: black;
 }
 
 .leadchild {
 	display: inline-block;
 	width: 80%;
-	color: black;
-}
-
-span, input {
-	color: black;
 }
 
 #prompt-pictureform-container {
