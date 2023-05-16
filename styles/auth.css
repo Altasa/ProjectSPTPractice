@@ -105,7 +105,7 @@
 }
 
 .inputBox input.field:focus {
-	border: 2px solid rgb(72, 145, 79);
+	border: 2px solid rgb(0, 100, 15);
 }
 
 .inputBox input[type="checkbox"] {
