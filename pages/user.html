@@ -20,16 +20,20 @@
     </head>
     <body>
         <!--Заголовок (шапка) страницы-->
-    	<header class="top" id="main_h">
+        <header class="top" id="main_h">
+            <h1><a href="..">BEST QUIZ EVER</a></h1>
             <nav>
-                <h1><a href="../index.html">BEST QUIZ EVER</a></h1>
-                <ul>
-                    <li><a href="https://github.com/Altasa/SPTP">GitHub</a></li>
-                    <li><input type="button" class="huab" id="a-login" value="Sign In"></li>
-                    <li><input type="button" class="huab" id="a-register" value="Sign Up"></li>
-                </ul>
+              <ul>
+                <li><a href="https://github.com/Altasa/SPTP">GitHub</a></li>
+                <li>
+                  <input class="huab" id="a-login" type="button" value="Sign In">
+                </li>
+                <li>
+                  <input class="huab" id="a-register" type="button" value="Sign Up">
+                </li>
+              </ul>
             </nav>
-    	</header>
+          </header>
         <main>
             <!--Сообщение пользователю-->
             <section id="message">
@@ -53,7 +57,7 @@
             <section id="account">
                 <div id="accountpage">
                     <h2 class="userinfo">Account page</h2>
-                    <div class="userinfo"><img id="userpicture" src="#"><input type="button" id="change_picture" value="Change_picture"></div>
+                    <div class="userinfo"><img class="userpic" id="userpicture" src="#"><input type="button" id="change_picture" value="Change picture"></div>
                     <div class="userinfo"><span id="usertitle">User: </span><span id="username"></span><input type="button" id="change_login" value="Change login"></div>
                     <div class="userinfo"><span id="emailtitle">Email: </span><span id="useremail"></span><input type="button" id="change_email" value="Change email"></div>
                     <div class="userinfo"><span>Email Status: </span><span id="useremailstat"></span><input type="button" id="new_confirmletter" value="Send new confirm letter"></div>
@@ -63,11 +67,11 @@
                 <div id="leaderboard">
                     <h2 id="leaderboardtitle">Leaders</h2>
                     <ol id="leaderboardcontent">
-                        <li id="lead1"><img src="#"><span class="leadchild"></span><span></span></li>
-                        <li id="lead2"><img src="#"><span class="leadchild"></span><span></span></li>
-                        <li id="lead3"><img src="#"><span class="leadchild"></span><span></span></li>
-                        <li id="lead4"><img src="#"><span class="leadchild"></span><span></span></li>
-                        <li id="lead5"><img src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead1"><img class="userpic" src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead2"><img class="userpic" src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead3"><img class="userpic" src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead4"><img class="userpic" src="#"><span class="leadchild"></span><span></span></li>
+                        <li id="lead5"><img class="userpic" src="#"><span class="leadchild"></span><span></span></li>
                     </ol>
                 </div>
             </section>
