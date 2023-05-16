@@ -104,8 +104,12 @@
 	font-size: large;
 }
 
-.inputBox input.field:focus {
-	border: 2px solid rgb(0, 100, 15);
+.inputBox input.log-button.field:focus {
+	border: 2px solid rgb(41, 100, 50);
+}
+
+.inputBox input.cancel-button.field:focus {
+	border: 2px solid rgb(220, 20, 50);
 }
 
 .inputBox input[type="checkbox"] {
