@@ -24,6 +24,8 @@ https://codepen.io/3psy0n/pen/LYpajmX
 
 https://codepen.io/rabakilgur/pen/RYpVQz
 
+https://wallpaperscraft.com/download/cube_3d_graphics_74555/1920x1080
+
 Референсы:
 
 https://example-io-game.victorzhou.com/
