@@ -136,6 +136,13 @@
 	border: 2px solid rgb(72, 145, 79);
 }
 
+.inputBox input.cancel-button {
+	margin-top: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: rgb(41, 100, 50);
+}
+
 .auth-hr {
 	width: 100%;
 	position: absolute;
