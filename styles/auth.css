@@ -46,6 +46,7 @@
 }
 
 #prompt-signupform-container, #prompt-signinform-container {
+	top: 50px;
 	position: absolute;
 	width: 423px;
 	height: 590px;
