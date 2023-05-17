@@ -20,17 +20,19 @@ html(lang='en')
     body
         //Заголовок (шапка) страницы
         header.top#main_h
+            h1
+                a(href=".") BEST QUIZ EVER
             nav
-                h1
-                    a(href=".") BEST QUIZ EVER
                 ul
                     li
-                        a(href="https://github.com/Altasa/SPTP") GitHub
+                        a(href="https://github.com/Altasa/SPTP", target="_blank") GitHub
                     li
                         input.huab#a-login(type="button", value="Sign In")
                     li
                         input.huab#a-register(type="button", value="Sign Up")
         main
+            section#hero-img
+
             //Сообщение пользователю
             section#message
                 span#message-to-user
