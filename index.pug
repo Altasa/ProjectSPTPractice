@@ -38,26 +38,39 @@ html(lang='en')
                 span#message-to-user
                 img#message-close-icon(src=".images/close.png")
             //Таблица доступных викторин
+            mixin card(card_title, date_posted, preview, type, difficulty, img_src)
+                if difficulty == "Very Easy"
+                    - var color = "blue"
+                else if difficulty == "Easy"
+                    - var color = "green"
+                else if difficulty == "Medium"
+                    - var color = "yellow"
+                else if difficulty == "Hard"
+                    - var color = "red"
+
+                article.quiz.dark(class=color)
+                    a.quiz__img-link(href="#")
+                        img.quiz__img(src=img_src, alt="Image Title")
+                    .quiz__text
+                        h3.quiz_title= card_title
+                        .quiz__subtitle.small
+                            time
+                                i= date_posted
+                        .quiz__bar
+                        .quiz__preview-text= preview
+                        ul.quiz__tagbox
+                            li.tagbox__item
+                                i= type
+                            li.tagbox__item
+                                i= difficulty
+                            li.tagbox__item.play(class=color)
+                                i Accept Challenge
+
             section#hero
                 .container
                     h2#hero-title Quizzes available
-                    article.quiz.dark.blue
-                        a.quiz__img-link(href="#")
-                            img.quiz__img(src="https://picsum.photos/501/500", alt="Image Title")
-                        .quiz__text
-                            h3.quiz__title WEB Develop
-                            .quiz__subtitle.small
-                                time(datetime="1970-01-01 00:00:00")
-                                    i Thu, January 1st 1970
-                            .quiz__bar
-                            .quiz__preview-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!
-                            ul.quiz__tagbox
-                                li.tagbox__item
-                                    i Quiz
-                                li.tagbox__item
-                                    i Very Easy
-                                li.tagbox__item.play.blue
-                                    i Accept Challenge
+                    +card("WEB Develop", "Today", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Easy", "https://picsum.photos/501/500")
+                    +card("Kinomania", "Yesterday", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Medium", "https://picsum.photos/1000/1001")
         //Сведения об авторах
         footer.bottom#main_f
             #commons
