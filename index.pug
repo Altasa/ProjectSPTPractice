@@ -38,7 +38,7 @@ html(lang='en')
                 span#message-to-user
                 img#message-close-icon(src=".images/close.png")
             //Таблица доступных викторин
-            mixin card(card_title, date_posted, preview, type, difficulty, img_src)
+            mixin card(quiz_id, card_title, date_posted, preview, type, difficulty, img_src)
                 if difficulty == "Very Easy"
                     - var color = "blue"
                 else if difficulty == "Easy"
@@ -52,7 +52,7 @@ html(lang='en')
                     a.quiz__img-link(href="#")
                         img.quiz__img(src=img_src, alt="Image Title")
                     .quiz__text
-                        h3.quiz_title= card_title
+                        h3.quiz__title= card_title
                         .quiz__subtitle.small
                             time
                                 i= date_posted
@@ -61,16 +61,16 @@ html(lang='en')
                         ul.quiz__tagbox
                             li.tagbox__item
                                 i= type
-                            li.tagbox__item
+                            li.tagbox__item(class=color)
                                 i= difficulty
                             li.tagbox__item.play(class=color)
-                                i Accept Challenge
+                                i(id=quiz_id) Accept Challenge
 
             section#hero
                 .container
                     h2#hero-title Quizzes available
-                    +card("WEB Develop", "Today", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Easy", "https://picsum.photos/501/500")
-                    +card("Kinomania", "Yesterday", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Medium", "https://picsum.photos/1000/1001")
+                    +card("quiz1", "WEB Develop", "Today", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Easy", "https://picsum.photos/501/500")
+                    +card("quiz2", "Kinomania", "Yesterday", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Medium", "https://picsum.photos/1000/1001")
         //Сведения об авторах
         footer.bottom#main_f
             #commons

@@ -1,18 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 
 $red: #bd150b;
+$dif-red: #ff0d00;
 $hover-red: #910000;
 $transparent-red: rgba(189, 21, 11, 0.1);
 
 $green: #478304;
+$dif-green: #88ff00;
 $hover-green: #3a6806;
 $transparent-green: rgba(121, 221, 9, 0.1);
 
 $blue: #0076bd;
+$dif-blue: #009afa;
 $hover-blue: #0052bd;
 $transparent-blue: rgba(0, 118, 189, 0.1);
 
+
 $yellow: #797722;
+$dif-yellow: #fffb00;
 $hover-yellow: #64610d;
 $transparent-yellow: rgba(189, 187, 73, 0.1);
 
@@ -22,39 +27,49 @@ main {
 	display: block;
 }
 
-#hero-title {
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 2.5rem;
-	margin: 2rem 0;
-}
-
 #hero {
     position: relative;
 	width: 100vw;
 	height: 100vh;
-}
+    
+    #hero-title {
+        font-size: 2.5rem;
+        margin: 0;
+    }
 
-#hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/q_img.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../images/q_img.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &::after {
+        content: "Quizzes Available";
+        position: absolute;
+        top: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 900;
+        width: 100%;
+        color: #fff;
+    }
+
+    a, a:hover {
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
 }
 
 .dark {
   background: #110f16;
-}
-
-#hero a, #hero a:hover {
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
 }
 
 .quiz {
@@ -68,7 +83,7 @@ main {
     color: #ffffff;
 
     &.dark {
-        background-color: rgb(24, 21, 31, 0.8);
+        background-color: rgb(24, 21, 31, 0.95);
     }
 
     a {
@@ -87,17 +102,20 @@ main {
 
     .small {
         user-select: none;
+        font-size: 80%;
     }
 
     .quiz__subtitle {
         margin: 0;
         font-style: 1.75em;
+        // font-size: 2em;
         user-select: none;
     }
 
     .quiz__title {
         margin: 0;
         font-style: 1.75em;
+        font-size: 2em;
         user-select: none;
     }
 
@@ -115,8 +133,8 @@ main {
     }
 
     .quiz__bar {
-        width: 60px;
-        height: 4px;
+        width: 80px;
+        height: 10px;
         margin: 10px 0;
         border-radius: 5px;
         background-color: #424242;
@@ -154,13 +172,62 @@ main {
             cursor: default;
             user-select: none;
             transition: background-color 0.3s;
+            font-weight: 600;
 
             &:hover {
                 background: rgba(83, 83, 83, 0.8);
             }
 
+            &.red:not(.play) {
+                color: $dif-red;
+            }
+
+            &.green:not(.play) {
+                color: $dif-green;
+            }
+
+            &.blue:not(.play) {
+                color: $dif-blue;
+            }
+
+            &.yellow:not(.play) {
+                color: $dif-yellow;
+            }
+
             &.play {
                 cursor: pointer;
+
+                &.red {
+                    background: $red;
+
+                    &:hover {
+                        background: $hover-red;
+                    }
+                }
+
+                &.green {
+                    background: $green;
+
+                    &:hover {
+                        background: $hover-green;
+                    }
+                }
+
+                &.blue {
+                    background: $blue;
+
+                    &:hover {
+                        background: $hover-blue;
+                    }
+                }
+
+                &.yellow {
+                    background: $yellow;
+
+                    &:hover {
+                        background: $hover-yellow;
+                    }
+                }
             }
         }
     }
@@ -179,19 +246,12 @@ main {
 
     &:hover {
         .quiz__bar {
-            width: 120px;
+            width: 160px;
         }
     }
 }
 
-@mixin color-palette($color, $hover-color, $transparent-color) {
-    &.play {
-        background: $color;
-
-        &:hover {
-            background: $hover-color;
-        }
-    }
+@mixin color-palette($color, $transparent-color) {
     // .quiz__title:hover {
     //     color: $color;
     // }
@@ -209,10 +269,10 @@ main {
     }
 }
 
-.red { @include color-palette($red, $hover-red, $transparent-red); }
-.green { @include color-palette($green, $hover-green, $transparent-green); }
-.blue { @include color-palette($blue, $hover-blue, $transparent-blue); }
-.yellow { @include color-palette($yellow, $hover-yellow, $transparent-yellow); }
+.red { @include color-palette($red, $transparent-red); }
+.green { @include color-palette($green, $transparent-green); }
+.blue { @include color-palette($blue, $transparent-blue); }
+.yellow { @include color-palette($yellow, $transparent-yellow); }
 
 @mixin transparent-color-responsive($transparent-color) {
     &::before {
