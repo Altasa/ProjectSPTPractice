@@ -7,7 +7,6 @@ main {
 #hero {
   position: relative;
   width: 100vw;
-  height: 100vh;
 }
 #hero #hero-title {
   font-size: 2.5rem;
