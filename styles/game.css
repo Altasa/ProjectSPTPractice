@@ -72,11 +72,11 @@ button{
     bottom: 20px;
 }
 button:hover{
-    background-color: #7FC7FF;
+    background-color: #00BFFF;
 }
 button:focus{
     outline: none;
-    background-color: #7FC7FF;
+    background-color: #00BFFF;
 }
 
 @media screen and (max-height: 500px){
