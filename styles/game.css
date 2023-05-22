@@ -56,7 +56,7 @@ ul li label{
     cursor: pointer;
 }
 button{
-    background-color: #1560BD;
+    background-color: unset;
     border: none;
     width: 25%;
     cursor: pointer;
