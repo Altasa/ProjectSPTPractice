@@ -58,8 +58,7 @@ ul li label{
 button{
     background-color: #1560BD;
     border: none;
-    display: block;
-    width: 100%;
+    width: 25%;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
@@ -67,6 +66,8 @@ button{
     color: #090909;
     padding: 15px;
     transition: all 0.5s ease;
+    display: inline;
+    border-radius: 5px;
 }
 button:hover{
     background-color: #7FC7FF;
