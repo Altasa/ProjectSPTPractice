@@ -132,6 +132,7 @@ body::-webkit-scrollbar {
   background-color: #110f16;
   /* border-top: 4px solid gold; */
   padding: 20px;
+  position: relative;
 }
 
 #links_f {
