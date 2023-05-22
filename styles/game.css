@@ -53,11 +53,11 @@ button{
     transition: all 0.5s ease;
 }
 button:hover{
-    background-color: #438faa;
+    background-color: #18ff03;
 }
 button:focus{
     outline: none;
-    background-color: #5ec6eb;
+    background-color: #18ff03;
 }
 
 @media screen and (max-height: 500px){
