@@ -37,7 +37,7 @@ h2, p{
     /*box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);*/
     width: 600px;
     overflow: hidden;
-    color: #0095B6;
+    color: #ffff;
     text-align: center;
 }
 .quiz-header{
@@ -63,7 +63,7 @@ button{
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #0095B6;
+    color: #000000;
     padding: 15px;
     transition: all 0.5s ease;
     display: inline;
