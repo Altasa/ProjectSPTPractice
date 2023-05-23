@@ -77,6 +77,18 @@
 	text-align: center;
 }
 
+#signin-prompt-message {
+	top: 100px;
+	left: 10%;
+	right: 5%;
+	text-decoration-line: unset;
+	font-size: 15px;
+}
+
+#signin-prompt-header {
+	font-size: 17px;
+}
+
 .form-prompt-msg {
 	margin: 0;
 	position: absolute;
