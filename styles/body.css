@@ -107,6 +107,10 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
+#hero{
+  top: 80px;
+}
+
 #hero-img {
   position: relative;
   width: 100vw;
