@@ -30,7 +30,7 @@ html(lang='en')
                     li
                         input.huab#a-register(type="button", value="")
         main
-            //section#hero-img
+            //- section#hero-img
             //Таблица доступных викторин
             mixin card(quiz_id, card_title, date_posted, preview, type, difficulty, img_src)
                 if difficulty == "Very Easy"
@@ -47,9 +47,9 @@ html(lang='en')
                         img.quiz__img(src=img_src, alt="Image Title")
                     .quiz__text
                         h3.quiz__title= card_title
-                        .quiz__subtitle.small
+                        .quiz__subtitle
                             time
-                                i= date_posted
+                                i.small= date_posted
                         .quiz__bar
                         .quiz__preview-text= preview
                         ul.quiz__tagbox
@@ -63,8 +63,10 @@ html(lang='en')
             section#hero
                 .container
                     h2#hero-title Quizzes available
-                    +card("quiz1", "WEB Develop", "Today", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Easy", "./images/q1_img.jpg")
-                    +card("quiz2", "Kinomania", "Yesterday", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Medium", "./images/q2_img.jpg")
+                    +card("quiz1", "WEB Develop", "Sun, May 7th 2023", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Very Easy", "./images/q1_img.jpg")
+                    +card("quiz2", "Kinomania", "Sun, May 14th 2023", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Easy", "./images/q2_img.jpg")
+                    +card("quiz3", "Quiz 3", "Sun, May 21st 2023", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Medium", "./images/q3_img.jpg")
+                    +card("quiz4", "Quiz 4", "Sun, May 28th 2023", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!", "Quiz", "Hard", "./images/q4_img.jpg")
         //Сведения об авторах
         footer.bottom#main_f
             #commons

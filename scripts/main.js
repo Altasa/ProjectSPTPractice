@@ -1,17 +1,3 @@
-//Параметры заголовка
-window.onscroll = function() {stickyHeader()};
-
-var header = document.getElementById("main_h");
-var sticky = header.offsetTop;
-
-function stickyHeader() {
-    if (window.pageYOffset >= sticky) {
-        header.classList.add("fixed");
-    } else {
-        header.classList.remove("fixed");
-    }
-}
-
 //Загрузка учетной записи и функционала страницы
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
