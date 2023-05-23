@@ -13,7 +13,6 @@ html(lang='en')
         link(href="./styles/body.css", rel="stylesheet", type="text/css")
         link(href="./styles/cards.css", rel="stylesheet", type="text/css")
         link(href="./styles/auth.css", rel="stylesheet", type="text/css")
-        link(href="./styles/account.css", rel="stylesheet", type="text/css")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         //Политика безопасности загружаемых скриптов: только с того же адреса
         meta(http-equiv="Content-Security-Policy", content="script-src 'self' http://f0781709.xsph.ru/scripts/ 'unsafe-inline' 'unsafe-eval'; ")
@@ -27,16 +26,11 @@ html(lang='en')
                     li
                         a(href="https://github.com/Altasa/SPTP", target="_blank") GitHub
                     li
-                        input.huab#a-login(type="button", value="Sign In")
+                        input.huab#a-login(type="button", value="")
                     li
-                        input.huab#a-register(type="button", value="Sign Up")
+                        input.huab#a-register(type="button", value="")
         main
             section#hero-img
-
-            //Сообщение пользователю
-            section#message
-                span#message-to-user
-                img#message-close-icon(src=".images/close.png")
             //Таблица доступных викторин
             mixin card(quiz_id, card_title, date_posted, preview, type, difficulty, img_src)
                 if difficulty == "Very Easy"

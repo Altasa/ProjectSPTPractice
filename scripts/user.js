@@ -21,6 +21,7 @@ function msgClose(){
     msgBox.style.display='none';
     msgBox.style.backgroundColor='lawngreen';
 }
+msgClose();
 
 //Функционал изменений в аккаунте
 var change_picture_button=document.getElementById("change_picture");
@@ -35,10 +36,8 @@ var deleter_url="../php/deleter.php";
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
 var requestURL="../php/intropage.php";
-var hero=document.getElementById('hero');
 var account=document.getElementById('account');
 userCheck();
-
 
 //Функция подгрузки учетной записи
 function userCheck(){
@@ -49,12 +48,12 @@ function userCheck(){
     request.send();
     request.onload=function(){
         if(request.response==null){ //При отсутствии сессии вернуть
-            location.href = "../index.html";
-        } else {    //При активной сессии установить кнопки работы с аккаунтом и выхода
+            location.href = "..";
+        } else{    //При активной сессии установить кнопки работы с аккаунтом и выхода
             login.value="Play";
             register.value="Log Out";
             login.onclick=function(){
-                location.href = "../index.html";
+                location.href = "..";
             }
             register.onclick=function(){
                 location.href = "../php/logout.php";

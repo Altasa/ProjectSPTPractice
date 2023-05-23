@@ -12,16 +12,6 @@ function stickyHeader() {
     }
 }
 
-//Отображение сообщения пользователю
-var msgBox=document.getElementById("message");
-var msgToUser=document.getElementById("message-to-user");
-var msgCloseButton=document.getElementById("message-close-icon");
-msgCloseButton.onclick=function(){msgClose()};
-function msgClose(){
-    msgBox.style.display='none';
-    msgBox.style.backgroundColor='lawngreen';
-}
-
 //Загрузка учетной записи и функционала страницы
 var forms=document.getElementById("forms");
 var login=document.getElementById("a-login");
@@ -41,7 +31,7 @@ function userCheck(){
         if(request.response==null){ //При отсутствии сессии отобразить поле входа или регистрации
             register.value="Back";
             register.onclick=function(){
-                location.href = "../index.html";
+                location.href = "..";
             }
             let message=document.getElementById('signin-prompt-message');    //Нужно добавить отображение специальных сообщений
 
@@ -58,7 +48,7 @@ function userCheck(){
                 container.style.display='block';
                 
                 form.cancel.onclick=function(){
-                    location.href = "../index.html";
+                    location.href = "..";
                 };
                 
                 form.sign_in.onclick=function(){
@@ -88,8 +78,6 @@ function userCheck(){
                         }else if(login_status==="UNKER"){
                             message.innerText="Unknown Server Error\nPlease contact administration.";
                         }else if((login_status==="ACLOG")||(login_status=="ALLOG")){
-                            msgToUser.textContent="Success login!";
-                            msgBox.style.display='block';
                             userCheck();
                         }
                         if(typeof(login_status)=="string"){
@@ -151,8 +139,13 @@ function userCheck(){
                             }else if(remember_status==="UNKER"){
                                 message.innerText="Unknown Server Error\nPlease contact administration.";
                             }else if(remember_status==="SUCCESS"){
-                                msgToUser.textContent="Letter with new password has been sent to your email";
-                                msgBox.style.display='block';
+                                message.innerText="Letter with new password has been sent to your email";
+                                document.getElementById('signin-prompt-header').textContent="Sign In";
+                                document.getElementById('form-prompt-username').textContent="Username";
+                                document.getElementById('form-prompt-password').textContent="Password";
+                                form.sign_in.value="Sign In";
+                                document.getElementById('form-prompt-password').style.display="block";
+                                document.getElementById('form-prompt-password-input').style.display="block";
                                 userCheck();
                             }
                             if(typeof(remember_status)=="string"){
@@ -181,7 +174,7 @@ function userCheck(){
                 container.style.display='block';
                     
                 form.cancel.onclick=function(){
-                    location.href = "../index.html";
+                    location.href = "..";
                 };
                     
                 form.sign_up.onclick=function(){
@@ -205,8 +198,6 @@ function userCheck(){
                         }else if(reger_status==="BUSY"){
                             message.innerText="Username already exist!";
                         }else if(reger_status==="SUCCESS"){
-                            msgToUser.textContent="Success register!";
-                            msgBox.style.display='block';
                             userCheck();
                         }else if(reger_status==="FAIL"){
                             message.innerText="Unknown Server Error\nPlease contact administration.";
@@ -228,7 +219,7 @@ function userCheck(){
                 }
             }
         } else {    //При активной сессии вернуться на главную страницу
-            location.href = "../index.html";
+            location.href = "..";
         }
     }
 }

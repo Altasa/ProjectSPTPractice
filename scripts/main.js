@@ -12,16 +12,6 @@ function stickyHeader() {
     }
 }
 
-//Отображение сообщения пользователю
-var msgBox=document.getElementById("message");
-var msgToUser=document.getElementById("message-to-user");
-var msgCloseButton=document.getElementById("message-close-icon");
-msgCloseButton.onclick=function(){msgClose()};
-function msgClose(){
-    msgBox.style.display='none';
-    msgBox.style.backgroundColor='lawngreen';
-}
-
 //Загрузка учетной записи и функционала страницы
 var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
