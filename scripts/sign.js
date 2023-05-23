@@ -99,6 +99,8 @@ function userCheck(){
                     message.textContent="Insert email or login to get email instruction to reset password";
                     document.getElementById('form-prompt-username').textContent="Login or Email";
                     document.getElementById('form-prompt-password').style.display="none";
+                    document.getElementById('signin-prompt-header').style.fontSize="none";
+                    document.getElementById('signin-prompt-message').style.display="top: 100px; left: 10%; right: 5%; text-decoration-line: unset; font-size: 15px;";
                     document.getElementById('form-prompt-password-input').style.display="none";
                     form.sign_in.value="Reset password";
                     form.cancel.onclick=function(){
@@ -107,6 +109,8 @@ function userCheck(){
                         document.getElementById('form-prompt-username').textContent="Username";
                         document.getElementById('form-prompt-password').textContent="Password";
                         form.sign_in.value="Sign In";
+                        document.getElementById('signin-prompt-header').style.fontSize="font-size: xx-large";
+                        document.getElementById('signin-prompt-message').style.display="left: 30%; font-size: xx-large; text-decoration-line: underline";
                         document.getElementById('form-prompt-password').style.display="block";
                         document.getElementById('form-prompt-password-input').style.display="block";
                         userCheck();
