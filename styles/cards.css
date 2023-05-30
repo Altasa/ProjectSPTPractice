@@ -2,6 +2,7 @@
 main {
   font-family: "Baloo 2", cursive;
   display: block;
+  height: 100%;
 }
 
 #hero {
