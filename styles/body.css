@@ -135,3 +135,18 @@ body::-webkit-scrollbar {
   margin: 10px auto 0;
   width: 50%;
 }
+
+@media screen and (max-width: 600px) {
+  #main_h {
+    max-height: 100px;
+    font-size: 12px;
+  }
+
+  .top h1 a, .top nav ul li a, .top nav ul li input {
+    font-size: 16px;
+  }
+
+  .top nav ul li a {
+    font-size: 16px;
+  }
+}
