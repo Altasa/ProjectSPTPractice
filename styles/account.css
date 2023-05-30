@@ -32,6 +32,8 @@
     background-color: white;
     font-size: large;
     padding: 40px;
+    border: solid black 5px;
+    border-radius: 15px;
 }
 #leaderboard{
 	margin-right: 15%;
