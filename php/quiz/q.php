@@ -2,12 +2,7 @@
     $postData = file_get_contents('php://input');
     $data = json_decode($postData, true);
     if($data["R"]=="Q") {   //Загрузчик викторин
-        $quiz_addr="../../data/quiz/q";
-        switch($data["quiz_id"]){
-            case "1": $quiz_addr.="1"; break;
-            case "2": $quiz_addr.="2"; break;
-            case "3": $quiz_addr.="3"; break;
-        }
+        $quiz_addr="../../data/quiz/q".$data["quiz_id"];
         echo file_get_contents($quiz_addr."q.json");
     }else if($data["R"]=="A"){  //Обработчик ответов
         $answers=json_decode(file_get_contents('../../data/quiz/q'.$data["quiz_id"]."a.json"), true);
