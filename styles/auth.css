@@ -1,13 +1,24 @@
 body {
-	background-color: #1c1c1c;
+	background-color: #110f16;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 main {
   display: block;
   position: relative;
-  height: 150vh;
+  /* height: 150vh; */
   font-family: "Baloo 2", cursive;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	color: antiquewhite;
+	text-align: center;
+	background-color: #110f16;
+	padding: 20px;
 }
 
 #img-for-auth {
@@ -64,7 +75,7 @@ main {
 	position: relative;
 	width: 423px;
 	height: 100%;
-	background-color: #1C1C1C;
+	background-color: #110f16;
 	/*background-image: linear-gradient(to right, rgba(46, 70, 41, 0.5),rgba(70, 70, 70, 0.5),rgba(46, 70, 41, 0.5)), url('https://i.pinimg.com/564x/a2/f1/6d/a2f16df33fc51e18423ff469ef133e36.jpg');*/
 	background-size: cover;
 	border-radius: 10px;
@@ -187,6 +198,16 @@ main {
 	border-color: rgba(255, 255, 255, 0.5);
 	margin: 2rem auto 2rem auto;
 }
+
+#footer-hr.auth-hr {
+	width: 80%;
+	position: absolute;
+	bottom: 9rem;
+	left: 50%;
+	transform: translateX(-50%);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
 .lost-pass, .lost-pass:visited {
 	position: relative;
 	text-align: center;
