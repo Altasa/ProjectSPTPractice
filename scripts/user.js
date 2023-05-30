@@ -12,17 +12,6 @@ function stickyHeader() {
     }
 }
 
-//Отображение сообщения пользователю
-var msgBox=document.getElementById("message");
-var msgToUser=document.getElementById("message-to-user");
-var msgCloseButton=document.getElementById("message-close-icon");
-msgCloseButton.onclick=function(){msgClose()};
-function msgClose(){
-    msgBox.style.display='none';
-    msgBox.style.backgroundColor='lawngreen';
-}
-msgClose();
-
 //Функционал изменений в аккаунте
 var change_picture_button=document.getElementById("change_picture");
 var change_login_button=document.getElementById("change_login");
@@ -37,6 +26,21 @@ var login=document.getElementById("a-login");
 var register=document.getElementById("a-register");
 var requestURL="../php/intropage.php";
 var account=document.getElementById('account');
+
+//Отображение сообщения пользователю
+var msgBox=document.getElementById("message");
+var msgToUser=document.getElementById("message-to-user");
+var msgCloseButton=document.getElementById("message-close-icon");
+msgCloseButton.onclick=function(){msgClose()};
+msgCloseButton.onmouseenter=function(){msgCloseButton.style="border: 3px solid black; background-color: red; border-radius: 10px;";};
+msgCloseButton.onmouseleave=function(){msgCloseButton.style="";};
+function msgClose(){
+    msgBox.style.display='none';
+    msgBox.style.backgroundColor='lawngreen';
+    account.style.marginTop='100px';
+}
+msgClose();
+
 userCheck();
 
 //Функция подгрузки учетной записи
@@ -92,11 +96,13 @@ function userCheck(){
                             msgToUser.textContent="New confirmation letter has been sent to your email";
                             msgBox.style.display='block';
                             msgBox.style.backgroundColor='lawngreen';
+                            account.style.marginTop='10px';
                             userCheck();
                         }else if(update_status==="FAIL"){
                             msgToUser.textContent="Fail to send confirmation letter";
                             msgBox.style.display='block';
                             msgBox.style.backgroundColor='red';
+                            account.style.marginTop='10px';
                         }
                     }, 100);
                     //Stop loading after 3 sec
@@ -106,6 +112,7 @@ function userCheck(){
                             msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
                             msgBox.style.display='block';
                             msgBox.style.backgroundColor='red';
+                            account.style.marginTop='10px';
                         }
                     }, 3000);
                 }
@@ -158,12 +165,14 @@ change_picture_button.onclick=function(){
                 msgToUser.textContent="Success update picture!";
                 msgBox.style.display='block';
                 msgBox.style.backgroundColor='lawngreen';
+                account.style.marginTop='10px';
                 document.getElementById('prompt-pictureform-container').style.display='none';
                 userCheck();
             }else if(update_status==="FAIL"){
                 msgToUser.textContent="Fail update picture!";
                 msgBox.style.display='block';
                 msgBox.style.backgroundColor='red';
+                account.style.marginTop='10px';
             }
         }, 100);
         //Stop loading after 3 sec
@@ -173,6 +182,7 @@ change_picture_button.onclick=function(){
                 msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
                 msgBox.style.display='block';
                 msgBox.style.backgroundColor='red';
+                account.style.marginTop='10px';
             }
         }, 3000);
     }
@@ -197,11 +207,13 @@ change_login_button.onclick=function(){
             msgToUser.textContent="Success update login!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='lawngreen';
+            account.style.marginTop='10px';
             userCheck();
         }else if(update_status==="FAIL"){
             msgToUser.textContent="Fail update login!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 100);
     //Stop loading after 3 sec
@@ -211,6 +223,7 @@ change_login_button.onclick=function(){
             msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 3000);
 }
@@ -234,11 +247,13 @@ change_email_button.onclick=function(){
             msgToUser.textContent="Success update email!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='lawngreen';
+            account.style.marginTop='10px';
             userCheck();
         }else if(update_status==="FAIL"){
             msgToUser.textContent="Fail update email!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 100);
     //Stop loading after 3 sec
@@ -248,6 +263,7 @@ change_email_button.onclick=function(){
             msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 3000);
 }
@@ -271,11 +287,13 @@ change_passw_button.onclick=function(){
             msgToUser.textContent="Success update passw!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='lawngreen';
+            account.style.marginTop='10px';
             userCheck();
         }else if(update_status==="FAIL"){
             msgToUser.textContent="Fail update passw!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 100);
     //Stop loading after 3 sec
@@ -285,6 +303,7 @@ change_passw_button.onclick=function(){
             msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 3000);
 }
@@ -308,19 +327,23 @@ delete_account_button.onclick=function(){
             msgToUser.textContent="Success delete account!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='lawngreen';
+            account.style.marginTop='10px';
             userCheck();
         }else if(update_status==="EMAILNEED"){
             msgToUser.textContent="Need confirm deleting - please check email";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='gold';
+            account.style.marginTop='10px';
         }else if(update_status==="INVPW"){
             msgToUser.textContent="Invalid password!";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }else if(update_status==="FAIL"){
             msgToUser.textContent="Unknown Server Error\nPlease contact administration.";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 100);
     //Stop loading after 3 sec
@@ -330,6 +353,7 @@ delete_account_button.onclick=function(){
             msgToUser.textContent="Cannot connect to server\nPlease contact administartion.";
             msgBox.style.display='block';
             msgBox.style.backgroundColor='red';
+            account.style.marginTop='10px';
         }
     }, 3000);
 }

@@ -56,6 +56,13 @@
 }
 #message{
     position: relative;
+    margin-top: 100px;
+}
+#message-close-icon{
+    cursor: pointer;
+}
+.bottom{
+    position: relative;
 }
 
 @media screen and (max-width: 600px){
@@ -72,7 +79,7 @@
 }
 
 @media screen and (min-width: 600px){
-    *{
+    main *{
         font-size: 20px;
     }
     #account{

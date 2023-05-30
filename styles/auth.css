@@ -206,3 +206,7 @@ span.eula a.eula:active {
 	background-color: rgb(40, 40, 40);
 	opacity: 0.5;
 }
+
+.bottom{
+	position: fixed;
+}
