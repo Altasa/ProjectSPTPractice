@@ -18,7 +18,7 @@
          }
          $SEND .=  $message."\r\n";
             if( !$socket = fsockopen("ssl://".$config['smtp_host'], $config['smtp_port'], $errno, $errstr, 30) ) {
-               if ($config['smtp_debug']) echo $errno."&lt;br&gt;".$errstr;
+               if ($config['smtp_debug']) echo $errno."&lt;br&gt;".$errstr."CAN NOT OPEN SOCKET";
                return false;
             }
 
@@ -50,21 +50,21 @@
                }
                fputs($socket, "MAIL FROM: <".$config['smtp_username'].">\r\n");
                if (!server_parse($socket, "250", __LINE__)) {
-                  if ($config['smtp_debug']) echo '<p>Не могу отправить комманду MAIL FROM: </p>';
+                  if ($config['smtp_debug']) echo '<p>Не могу отправить команду MAIL FROM: </p>';
                   fclose($socket);
                   return false;
                }
                fputs($socket, "RCPT TO: <" . $mail_to . ">\r\n");
 
                if (!server_parse($socket, "250", __LINE__)) {
-                  if ($config['smtp_debug']) echo '<p>Не могу отправить комманду RCPT TO: </p>';
+                  if ($config['smtp_debug']) echo '<p>Не могу отправить команду RCPT TO: </p>';
                   fclose($socket);
                   return false;
                }
                fputs($socket, "DATA\r\n");
 
                if (!server_parse($socket, "354", __LINE__)) {
-                  if ($config['smtp_debug']) echo '<p>Не могу отправить комманду DATA</p>';
+                  if ($config['smtp_debug']) echo '<p>Не могу отправить команду DATA</p>';
                   fclose($socket);
                   return false;
                }

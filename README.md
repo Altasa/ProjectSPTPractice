@@ -8,7 +8,7 @@
 
 ### Статус работы:
 
-Стабильная версия [Срок аренды хостинга истек, сайт не работает](http://f0781709.xsph.ru)
+Стабильная версия [https://f1003067.xsph.ru/](http://f1003067.xsph.ru)
 
 Тестирование  [https://verkhovma.github.io/SPTP/](https://verkhovma.github.io/SPTP/)
 
